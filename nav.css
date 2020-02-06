@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: greenyellow;
+    margin: 0;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#containerNav{
+    display: flex;
+}
+
+.menu{
+    position: fixed;
+    z-index: 9;
+}
+
+.menu ul{
+    list-style-type: none; 
+}
+
+.menu ul li{
+    display: inline-flex;
+}
+
+a{
+    text-decoration: none;
+}
