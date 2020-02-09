@@ -1,35 +1,94 @@
+/* General styles */
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: greenyellow;
+    font-size: 16px;
     margin: 0;
+    padding: 0;
 }
 
 .container{
     width: 1200px;
     margin: 0 auto;
     padding: 0 auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-#containerNav{
+/* Navigation styles */
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.headerNav{
+    padding: 0;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none; 
     display: flex;
 }
 
-.menu{
-    position: fixed;
-    z-index: 9;
+nav ul li{
+    display: flex;
+    justify-content: center;
 }
 
-.menu ul{
-    list-style-type: none; 
-}
-
-.menu ul li{
-    display: inline-flex;
+nav ul li a{
+    padding: 1.2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 a{
     text-decoration: none;
+}
+
+/* Styles for mobile */
+@media (max-width: 499px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav:hover ul{
+        display: block;
+    }
+
+    nav a{
+        padding: 1.2em;
+        display: flex;
+        justify-content: center; 
+    }
+
+}
+
+/* Styles for tablet */
+@media (min-width: 500px){
+
+    .container{
+        justify-content: space-between;
+    }
+
+    .showMenu{
+        display: none;
+    }
+
+}
+
+/* Styles for desktop */
+@media (min-width: 800px){
+
+
 }
