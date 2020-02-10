@@ -1,6 +1,4 @@
-.hero{
-    object-fit: cover;
-}
+
 
 img{
     max-width: 100%;
@@ -8,3 +6,42 @@ img{
     filter: grayscale();
 }
 
+.hero{
+    position: relative;
+}
+
+.hero__titles{
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+
+@media (max-width: 499px){
+
+    img{
+        max-width: 100%;
+        height: auto;
+        filter: grayscale();
+        object-fit: cover;
+    } 
+
+}
+
+/* Styles for desktop */
+@media (min-width: 800px){
+
+    .hero{
+        object-fit: cover;
+    }
+
+    .hero__titles{
+        color: white;
+        position: absolute;
+        top: 30px;
+        left: 10px;
+    }
+    
+
+}
