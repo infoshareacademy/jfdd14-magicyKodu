@@ -89,10 +89,16 @@ a{
         display: none;
     }
 
+
+    
+
 }
 
 /* Styles for desktop */
 @media (min-width: 800px){
 
-
+   
+    nav ul{
+        display: fixed;
+    }
 }
