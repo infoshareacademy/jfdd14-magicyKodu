@@ -1,0 +1,9 @@
+.hero{
+    object-fit: cover;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    filter: grayscale();
+}
