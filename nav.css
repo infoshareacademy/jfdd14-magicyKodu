@@ -24,17 +24,15 @@ body{
     font-family: var(--secondaryFont);
 }
 
-#containerNav{
+.container{
     width: 1200px;
     margin: 0 auto;
     padding: 0 auto;
 }
 
-.container{
-    
+#containerNav{
     max-width: 100%;
-    display: flex;
-    justify-content: center;
+    display: block;
 }
 
 /* Navigation styles */
@@ -80,10 +78,6 @@ a:hover{
 /* Extra small devices (landscape phones, less than 576px) */
 @media (max-width: 575px) { 
 
-    .container{
-        flex-direction: column;
-    }
-
     nav ul{
         display: none;
     }
@@ -103,10 +97,6 @@ a:hover{
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
-    .container{
-        justify-content: space-between;
-    }
-
     .showMenu{
         display: none;
     }
@@ -114,6 +104,11 @@ a:hover{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
+    #containerNav{
+        display: flex;
+        justify-content: space-between;
+    }
 
 }
 
