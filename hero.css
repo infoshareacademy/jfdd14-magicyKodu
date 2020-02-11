@@ -1,47 +1,32 @@
-
-
-img{
-    max-width: 100%;
-    height: auto;
-    filter: grayscale();
+.hero{ 
+    background: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;  
 }
 
-.hero{
-    position: relative;
-}
-
-.hero__titles{
+.hero__header{
     color: white;
-    position: absolute;
-    top: 30px;
-    left: 10px;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;  
 }
 
-
-@media (max-width: 499px){
-
-    img{
-        max-width: 100%;
-        height: auto;
-        filter: grayscale();
-        object-fit: cover;
-    } 
-
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #28bb76 !important;
+    border-color: #28bb76 !important;
 }
 
-/* Styles for desktop */
-@media (min-width: 800px){
-
-    .hero{
-        object-fit: cover;
-    }
-
-    .hero__titles{
-        color: white;
-        position: absolute;
-        top: 30px;
-        left: 10px;
-    }
-    
-
+h2{
+    margin: 20px auto !important;
 }
