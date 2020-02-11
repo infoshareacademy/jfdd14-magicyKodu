@@ -4,6 +4,8 @@
     --secondaryColor: #427c5b;
     --thirdColor: #fff;
     --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
 }
 
 *{
