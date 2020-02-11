@@ -1,22 +1,36 @@
 /* General styles */
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Comfortaa', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-size: 16px;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
-header{
-    background-color: red;
+.headerNav{
+    background-color: var(--forthColor);
+    color: var(--thirdColor);
+    font-family: var(--secondaryFont);
 }
 
-.container{
+#containerNav{
     width: 1200px;
     margin: 0 auto;
     padding: 0 auto;
+}
+
+.container{
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -30,6 +44,7 @@ header{
 
 .headerNav{
     padding: 0;
+    font-weight: bold;
 }
 
 nav ul{
@@ -45,7 +60,7 @@ nav ul li{
 }
 
 nav ul li a{
-    padding: 1.2em;
+    padding: 1em;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -53,10 +68,15 @@ nav ul li a{
 
 a{
     text-decoration: none;
+    color: var(--thirdColor);
 }
 
-/* Styles for mobile */
-@media (max-width: 499px){
+a:hover{
+    color: var(--primaryColor);
+}
+
+/* Extra small devices (landscape phones, less than 576px) */
+@media (max-width: 575px) { 
 
     .container{
         flex-direction: column;
@@ -78,8 +98,8 @@ a{
 
 }
 
-/* Styles for tablet */
-@media (min-width: 500px){
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
 
     .container{
         justify-content: space-between;
@@ -88,17 +108,19 @@ a{
     .showMenu{
         display: none;
     }
+}
 
-
-    
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
 
 }
 
-/* Styles for desktop */
-@media (min-width: 800px){
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 
-   
     nav ul{
         display: fixed;
     }
+
 }
+
