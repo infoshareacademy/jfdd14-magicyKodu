@@ -29,10 +29,6 @@ body{
     background: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg) no-repeat center;
     background-size: cover;
     height: 100vh;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;  
 }
 
 .hero__header{
@@ -68,7 +64,7 @@ h3{
 
 
 .btn:hover{
-    background-image: radial-gradient(var(--primaryColor), var(--secondaryColor));
+    background-image: radial-gradient(var(--secondaryColor), var(--primaryColor));
     color: var(--thirdColor);
 }
 
@@ -80,15 +76,55 @@ h3{
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 
+    .hero__header{
+        padding: 50px;
+        justify-content: center;
+    }
+
+    .hero__header__btn{
+        margin-top: 30px;
+    }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
+    .hero__header{
+        text-align: left;
+        padding: 30px;
+        justify-content: center;
+    }
+
+    h2{
+        line-height: 46px;
+        font-size: 56px;
+    }
+    
+    h3{
+        line-height: 38px;
+        font-size: 24px;
+    }
+
+    .btn{
+        font-size: 1.2em;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+
+    h2{
+        line-height: 46px;
+        font-size: 72px;
+    }
+    
+    h3{
+        line-height: 44px;
+        font-size: 28px;
+    }
 
 }
 
