@@ -1,6 +1,5 @@
 body{
     text-align: center;
-    background-color: gray;
 }
 div.check{
     margin-left: 50px;
@@ -32,24 +31,27 @@ div.check{
     
 }
 form.premiera p{
-    font-size: 15vh;
+    font-size: 8vh;
 }
 .functions li img{
   width: 100px;
   height: 100px;
  }
- div.form input#email.text input.text{
-     width: 30%;
-     min-width: 200px;
-     height: 30px;
- }
+
  div.form input.text{
     width: 30%;
     min-width: 200px;
     height: 30px;
     text-align: center;
+    background-color: #28bb76;
+    color: white;
 }
-
+div.form input#email.text{
+    width: 30%;
+    min-width: 200px;
+    height: 30px;
+    background-color:white;
+}
 .functions li ul h2 p{
     text-align: center;
 }
