@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box
+}
+
+img{
+    max-width: 100%;
+}
+body {
+    padding-top: 10px;
+    margin: 0;
+    font-family:'Lucida Grande', 'Lucida Sans';
+    background:  rgb(87, 110, 139);
+    
+}
+
+a{
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.banner {
+    margin-top: 28px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    background: rgb(202, 62, 63); 
+}
+
+nav  {
+    background: rgb(87, 110, 139);
+    background: rgb(49, 73, 84);49	73	84	
+    padding: 0px;
+    
+}
+
+nav > a:nth-child(1) {
+    background: rgb(202, 62, 63); 
+}
+
+
+nav > a:nth-child(2) {
+    background: rgb(24,198,163);
+
+}
+
+nav > a:nth-child(3) {
+    background: rgb(227, 162, 59)	;
+
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+}
+
+.o_mnie {
+    display: flex;
+    align-items: center;
+    margin-top: 50px ;
+    margin-bottom: 50px;
+    padding: 20px;
+    font-size: 25px;
+}
+
+
+
+.o_mnie > div > img {
+    border-radius: 50%;
+    max-width: 80%;
+    height: auto;
+    margin: 25px;
+    border: 10px solid rgb(52, 65, 74);
+}
+
+.o_mnie_paragraph {
+    padding: 20px;
+    text-align: center;
+}
+
+aside > div.techno {
+    color: white;
+    font-size:;
+    text-align: center;
+    padding: 20px;
+    background: rgb(24,198,163);
+    background: rgb(227, 162, 59)
+}
+
+
+
+.container, .container2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+    padding: 50px;
+    text-align: center;
+    font-size: 70%;
+}
+
+.div1, .div2, .div3, .div4 {
+   
+    flex-wrap: wrap;
+    font-size: 10px;
+    width: 200px;
+    height: auto;
+}
+
+
+
+
+
+@media (max-width: 599px) {
+
+        body {
+            font-size: 70%%;
+        }
+
+        nav {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        nav>a {
+            width: 100%;
+        }
+
+        .banner {
+            margin-top: 105px;
+        }
+
+        div.header{
+            font-size: 13px;
+        }
+
+        
+        .o_mnie {
+            margin-top: 0;
+            margin-bottom: 0;
+            flex-direction: column-reverse;
+            font-size: 15px;
+        }
+
+        .o_mnie > div > img {
+            display: flex;
+            width: 50%;
+            height: auto;
+            margin-left: 23vw;
+            max-width: 50%;
+        }
+
+        .o_mnie .o_mnie_paragraph {
+            text-align: center;
+        }
+
+        .container, .container2 {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {padding-bottom: 0;}
+
+        .container2 {
+            padding-top: 0px;
+        }
+}
+
+@media (min-width: 600px) { 
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            
+        }
+    }

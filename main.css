@@ -37,6 +37,15 @@
     transform: translate(-5px, -10px); 
 }
 
+.button{
+    flex-direction: row;
+    
+}
+
+.button img{
+    margin-right: 15px;
+}
+
 span.aboutUsInfo {
     font-weight: bold ;
     font-size: ;
