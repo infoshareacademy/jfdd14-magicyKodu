@@ -7,7 +7,6 @@ div.check{
 }
 .check{
     text-align: left;
-
 }
 
 .functions {
@@ -45,6 +44,10 @@ form.premiera p{
     text-align: center;
     background-color: #28bb76;
     color: white;
+
+}
+div.form input.text:hover{
+    background-color: #10af02;
 }
 div.form input#email.text{
     width: 30%;
