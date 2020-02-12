@@ -1,0 +1,70 @@
+body{
+    text-align: center;
+    background-color: gray;
+}
+div.check{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.check{
+    text-align: left;
+
+}
+
+.functions {
+    display: flex;
+    list-style-type: none;
+    font-size: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.functions li{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+
+    
+}
+form.premiera p{
+    font-size: 15vh;
+}
+.functions li img{
+  width: 100px;
+  height: 100px;
+ }
+ div.form input#email.text input.text{
+     width: 30%;
+     min-width: 200px;
+     height: 30px;
+ }
+ div.form input.text{
+    width: 30%;
+    min-width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.functions li ul h2 p{
+    text-align: center;
+}
+ul.functions{
+    padding: 0px;
+}
+
+
+
+@media (min-width: 576px) { 
+    .functions li img{
+    width: 50%;
+    height: 50%;
+    }
+}
+@media (min-width: 992px) { 
+
+}
