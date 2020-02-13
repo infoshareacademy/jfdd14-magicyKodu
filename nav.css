@@ -118,28 +118,30 @@ a:hover{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-
-    .showMenu{
-        display: none;
-    }
+    
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-    #containerNav{
+    .showMenu{
+        display: none;
+    }
+
+    nav ul li a{
+        font-size: 12px;
+        padding: 10px 0 10px 20px;
+    }
+
+    nav ul{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
-    nav ul{
-        display: flex;
-    }
 
 }
 
