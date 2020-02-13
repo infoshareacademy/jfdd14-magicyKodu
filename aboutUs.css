@@ -1,0 +1,76 @@
+.containerAbout {
+    max-width: 1200px;
+    display: flex;
+    text-align: center;
+    margin: 7%;
+}
+
+
+.aboutUs {
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.aboutUs img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    border:3px solid white;
+    border-radius: 75px;
+    box-shadow:10px 10px 10px grey;  
+}
+
+.aboutUs .linkedButton {
+    border: none;
+    width: 75px;
+    height: 75px;
+    transition: transform .2s;
+
+}
+
+.linkedButton:hover {
+    transform: translate(-5px, -10px); 
+}
+
+.button{
+    flex-direction: row;
+    
+}
+
+.button img{
+    margin-right: 15px;
+}
+
+span.aboutUsInfo {
+    font-weight: bold ;
+    font-size: ;
+}
+
+@media (max-width: 576px) { 
+    .container {
+        flex-flow: column;
+        align-items: center;
+    }
+   
+
+
+
+ 
+
+
+   
+
+   
+   
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+*/
