@@ -29,7 +29,7 @@ div.check{
 form.premiera p{
     font-size: 8vh;
 }
-ul.functions li img{
+.functions li img{
   width: 100px;
   height: 100px;
  }
@@ -61,28 +61,13 @@ ul.functions{
 }
 
 
-/* Extra small devices (landscape phones, less than 576px) */
-@media (max-width: 575px) { 
-   
-}
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-}
 @media (min-width: 576px) { 
     .functions li img{
     width: 50%;
     height: 50%;
     }
+}
+@media (min-width: 992px) { 
+
 }
