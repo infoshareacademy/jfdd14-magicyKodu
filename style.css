@@ -54,6 +54,7 @@ div.form input#email.text{
     min-width: 200px;
     height: 30px;
     background-color:white;
+    color: black;
 }
 .functions li ul h2 p{
     text-align: center;
