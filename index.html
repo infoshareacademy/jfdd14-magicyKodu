@@ -1,79 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="dawid.css" type="text/css" />
+    <title>Planner 4 runner</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
+
+
+
 </head>
+
 <body>
-    <form class="premiera">
-        <p>Sprawdź trasy biegania oraz </p>
-    <p>Zapisz sie na naszą premierę</p>
+    <header class="headerNav">  
+        <div class="logo">
+            <img src="img/logo.svg">
+        </div>
+        <nav>
+            <a class="showMenu"><img src="img/menu.svg"></a>
+            <ul>
+                <li><a href="#home">Strona główna</a></li>
+                <li><a href="#why_us">Dlaczego my</a></li>
+                <li><a href="#specification">Specyfikacja</a></li>
+                <li><a href="#premiere">Premiera</a></li>
+                <li><a href="#team">Zespół</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>                      
+    </header>
 
-    <div class="form">
+    <main>
+        <section class="hero">
+            <header class="hero__header"> 
+                <div class="hero__header__titles">
+                    <h2>Zaplanuj, pobiegnij!</h2>
+                    <h3>Planner 4 Runner to indywidualny kalendarz, który<br>  ułatwia organizację Twoich wydarzeń biegowych.<br> Wszystko co niezbędne zawarte w jednym miejscu.<h3>
+                </div>
+                <div class="hero__header__btn">
+                    <a class="btn">Zapisz się na premierę</a> 
+                </div>                 
+            </header> 
+        </section>
 
-        <input class="text" type="email" name="email" id="email" placeholder="podaj swój adres e-mail" required><br><br>
-        <input class="text" type="submit" value="Wyślij formularz" required><br><br>
-<div class="check">
-        <input class="check" type="checkbox" name="zgoda" value="zgoda" required> Wyrażam zgodę na otrzymanie jednego e-maila z informacją o premierze <br>
-        <input class="check" type="checkbox" name="zgoda" value="zgoda" required> W związku z rozpoczęciem obowiązywania nowej regulacji w zakresie ochrony danych osobowych – Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) („RODO”), przekazujemy poniżej szereg ważnych informacji o sposobie i zasadach  przetwarzania Twoich danych osobowych oraz o przysługujących Tobie prawach.
-</div>
-    </div>
+        <section>
+            <div class="containerFunctions"> 
+                    <div class="functions">
+                        <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy"> 
+                        <h3>Podgląd wydarzeń w okolicy</h3>  
+                    </div>
+                        
+                    <div class="functions">
+                        <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
+                        <h3>Dodawanie własnych wydarzeń</h3>
+                    </div>
 
-    </form>
+                    <div class="functions">
+                        <img src="image/history-solid.svg" alt="Historia startów">
+                        <h3>Historia Twoich startów</h3>
+                    </div>
+
+                    <div class="functions">
+                        <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
+                        <h3>Automatyczne uaktualnianie kalendarza</h3>
+                    </div>
+               </div>
+        </section>
 
     <div class="container">
-        <section>
-            <div class="funct">
-                <ul class="functions">
-                    <li>
-                    <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy">   
-                    <h2>Podgląd wydarzeń w okolicy</h2>
-                    <p>Znajdź grupy i wydarzenia w pobliżu, dzięki którym poznasz nowych ludzi i odkryjesz nowe hobby. Korzystaj z Planner4Runner, aby lepiej poznać ścieżki</p>
-                    </li>
-                    <li >
-                    <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
-                    <h2>Dodawanie własnych wydarzeń</h2>
-                    <p>Sam możesz zorganizować swój własny bieg, wystarczy jedynie utworzyć własne wydarzenie i gotowe. Użytkownicy sami zapisują się na bieg. A Ty jesteś organizatorem</p>
-                    </li>
-                    <li>
-                    <img src="image/history-solid.svg" alt="Historia startów">
-                    <h2>Historia startów</h2>
-                    <p>Jesteś w stanie sprawdzać swoje biegi, dzięki temu możesz porównywać swoje starty, poprawiać wyniki oraz porównywać z innymi użytkownikami</p>
-                    </li>
-                    <li>
-                    <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
-                    <h2>Automatyczne aktualizacje kalendarza</h2>
-                    <p>Twoje wydarzenia automatycznie będą dopisane do kalenarza, dzięki czemu nie zapomnisz o zbliżających się biegowych wydarzeniach</p>
-                    </li>
-                    <li>
-                    <img src="image/map-signs-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
-                    <h2>Dodaj własne trasy biegowe</h2>
-                    <p>Masz swóją ulubioną trasę, podziel się z innymi i razem biegajcie. Pochwal się swoimi najlepszymi ścieżkami, ciesz się z innymi użytkownikami </p>
-                    </li>
-                    <li>
-                    <img src="image/user-shield-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
-                    <h2>Dbamy o bezpieczenstwo danych</h2>
-                    <p>Spędzamy coraz więcej czasu w sieci. Nowe technologie zaczynają coraz bardziej dominować w naszym życiu, nasi pracownicy dbają o bezpieczeństwo. Wzrasta zastosowanie komputerów, internetu i nowych technologii w coraz to nowych obszarach naszego życia.</p>
-                    </li>
-                    <li>
-                    <img src="image/bell-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
-                    <h2>Alert o wydarzeniach w Twojej okolicy</h2>
-                    <p>Otrzymuj powiadomienia o wydarzeniach sportowych z Twojej okolicy, newslatter jest darmowy, oczywiście nie otrzymasz ani smau ani reklam.</p>
-                    </li>
-                    <li>
-                    <img src="image/eye-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
-                    <h2>Łatwe przejrzyste menu</h2>
-                    <p>Menu to jesten z najważniejszych elementów jeżeli chodzi o aplikację oraz strnę WWW, nasi klienci w łatwy i prosty sposób są wstanie znależć to czego w danym momencie szukają.</p>
-                    </li>
-                </ul>
+            <section>
+                <div class="funct">
+                    <ul class="functions">
+                        <li>
+                        <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy">   
+                        <h2>Podgląd wydarzeń w okolicy</h2>
+                        <p>Znajdź grupy i wydarzenia w pobliżu, dzięki którym poznasz nowych ludzi i odkryjesz nowe hobby. Korzystaj z Planner4Runner, aby lepiej poznać ścieżki</p>
+                        </li>
+                        <li >
+                        <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
+                        <h2>Dodawanie własnych wydarzeń</h2>
+                        <p>Sam możesz zorganizować swój własny bieg, wystarczy jedynie utworzyć własne wydarzenie i gotowe. Użytkownicy sami zapisują się na bieg. A Ty jesteś organizatorem</p>
+                        </li>
+                        <li>
+                        <img src="image/history-solid.svg" alt="Historia startów">
+                        <h2>Historia startów</h2>
+                        <p>Jesteś w stanie sprawdzać swoje biegi, dzięki temu możesz porównywać swoje starty, poprawiać wyniki oraz porównywać z innymi użytkownikami</p>
+                        </li>
+                        <li>
+                        <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
+                        <h2>Automatyczne aktualizacje kalendarza</h2>
+                        <p>Twoje wydarzenia automatycznie będą dopisane do kalenarza, dzięki czemu nie zapomnisz o zbliżających się biegowych wydarzeniach</p>
+                        </li>
+                        <li>
+                        <img src="image/map-signs-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h2>Dodaj własne trasy biegowe</h2>
+                        <p>Masz swóją ulubioną trasę, podziel się z innymi i razem biegajcie. Pochwal się swoimi najlepszymi ścieżkami, ciesz się z innymi użytkownikami </p>
+                        </li>
+                        <li>
+                        <img src="image/user-shield-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h2>Dbamy o bezpieczenstwo danych</h2>
+                        <p>Spędzamy coraz więcej czasu w sieci. Nowe technologie zaczynają coraz bardziej dominować w naszym życiu, nasi pracownicy dbają o bezpieczeństwo. Wzrasta zastosowanie komputerów, internetu i nowych technologii w coraz to nowych obszarach naszego życia.</p>
+                        </li>
+                        <li>
+                        <img src="image/bell-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h2>Alert o wydarzeniach w Twojej okolicy</h2>
+                        <p>Otrzymuj powiadomienia o wydarzeniach sportowych z Twojej okolicy, newslatter jest darmowy, oczywiście nie otrzymasz ani smau ani reklam.</p>
+                        </li>
+                        <li>
+                        <img src="image/eye-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h2>Łatwe przejrzyste menu</h2>
+                        <p>Menu to jesten z najważniejszych elementów jeżeli chodzi o aplikację oraz strnę WWW, nasi klienci w łatwy i prosty sposób są wstanie znależć to czego w danym momencie szukają.</p>
+                        </li>
+                    </ul>
+    
+    
+                </div>
+                <div class="form">
 
-
+                    <input class="text" type="email" name="email" id="email" placeholder="podaj swój adres e-mail" required><br><br>
+                    <input class="text" type="submit" value="Wyślij formularz" required><br><br>
+            <div class="check">
+                    <input class="check" type="checkbox" name="zgoda" value="zgoda" required> Wyrażam zgodę na otrzymanie jednego e-maila z informacją o premierze <br>
+                    <input class="check" type="checkbox" name="zgoda" value="zgoda" required> W związku z rozpoczęciem obowiązywania nowej regulacji w zakresie ochrony danych osobowych – Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) („RODO”), przekazujemy poniżej szereg ważnych informacji o sposobie i zasadach  przetwarzania Twoich danych osobowych oraz o przysługujących Tobie prawach.
             </div>
-        </section>
-   </div> 
+                </div>
+            </section>
 
+       
+        <section>
+            <div class="containerAbout">
+                <div class="aboutUs">
+                    <img src="image/karolina.jpeg" alt="Karolina Szlenk"> 
+                    <h4>Karolina Szlenk</h4> 
+                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam. Voluptas pariatur reiciendis molestiae consequatur, doloribus laborum temporibus tempora laudantium!</p> 
+                    <div class="button">
+                    <a href="https://www.linkedin.com/in/karolina-szlenk" target=blank>
+                        <img class="linkedButton" src="/image/linked2.png" alt="linkedin karolina">
+                    </a>
+                    <a href="karolina_szlenk/index.html" target=blank><img class="linkedButton" src="/image/aboutme.png" alt="Homepage Karolina"></a>
+                    </div>
+                </div>
+                    
+                <div class="aboutUs">
+                    <img src="image/kamil.jpg" alt="Kamil Czarnocki">
+                    <h4>Kamil Czarnocki</h4>
+                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam. Voluptas pariatur reiciendis molestiae consequatur, doloribus laborum temporibus tempora laudantium!</p> 
+                    <div class="button">
+                    <a href="https://www.linkedin.com/in/kamil-czarnocki" target=blank>
+                        <img class="linkedButton" src="/image/linked2.png" alt="linkedin kamil">
+                    </a>
+                    <a href="kamil_czarnocki/index.html" target=blank><img class="linkedButton" src="/image/aboutme.png" alt="Homepage Kamil"></a>
+                    </div>
+                </div>
+
+                <div class="aboutUs">
+                    <img src="image/dawid.jpeg" alt="Dawid Domański">
+                    <h4>Dawid Domański</h4>
+                    <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nam. Voluptas pariatur reiciendis molestiae consequatur, doloribus laborum temporibus tempora laudantium!</p> 
+                    <div class="button">
+                    <a href="https://www.linkedin.com/in/dawid-domański-6235b4132" target=blank>
+                        <img class="linkedButton" src="/image/linked2.png" alt="linkedin dawid">
+                    </a>
+                    <a href="dawid_domanski/index.html" target=blank><img class="linkedButton" src="/image/aboutme.png" alt="Homepage Dawid"></a>
+                    </div>
+                </div>
+                
+        </section>
+    </main>
+
+    <footer>
+        <div class="container"></div>
+    </footer>   
 </body>
+
 </html>
