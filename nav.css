@@ -117,7 +117,15 @@ a:hover{
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px){
+
+    nav ul{
+        display: none;
+    }
+
+    nav:hover ul{
+        display: block;
+    }
 
 }
 
@@ -142,18 +150,6 @@ a:hover{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .showMenu{
-        display: none;
-    }
 
-    nav ul li a{
-        font-size: 12px;
-        padding: 10px 0 10px 20px;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: flex-end;
-    }
 }
 
