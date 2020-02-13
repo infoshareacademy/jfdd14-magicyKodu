@@ -2,12 +2,11 @@
     max-width: 1200px;
     display: flex;
     text-align: center;
-    margin: 5%;
 }
 
 
 .functions {
-    width: 25%;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,8 +16,11 @@
 .functions img{
     width: 100px;
     height: 100px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
+
+
 
 @media (max-width: 600px) { 
     .containerFunctions {
@@ -26,9 +28,4 @@
         align-items: center;
     }
    
-    .functions img{
-        width: 100%;
-        height: 100%;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+  
