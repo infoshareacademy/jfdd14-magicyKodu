@@ -6,7 +6,7 @@ div.check{
     text-align: left;
 }
 
-.functions {
+#specification {
     display: flex;
     list-style-type: none;
     flex-direction: row;
@@ -17,56 +17,48 @@ div.check{
     
 }
 
-.functions li{
+#specification li{
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
     align-items: center;
+}
 
-    
-}
-form.premiera p{
-    font-size: 2vh;
-}
-.functions li img{
-  width: 50px;
-  height: 50px;
+ #premiere p{
+    text-align: center;
+    font-size: 4vh;
  }
- div.form{
-     height: 1000px;
-     margin: 100px;
+ div#premiere{
+    min-width: 200px;
+    height: 400px;
+    text-align: center;
+    margin-top: 100px;
      
  }
- div.form input.text{
+ div#premiere input.text{
     margin: auto 0;
     width: 30%;
     min-width: 200px;
-    height: 30px;
+    height: 40px;
     text-align: center;
     background-color: #28bb76;
     color: white;
 
 }
-div.form input.text:hover{
+div#premiere input.text:hover{
     background-color: #10af02;
 }
-div.form input#email.text{
+div#premiere input#email.text{
     width: 30%;
     min-width: 200px;
-    height: 30px;
+    height: 40px;
     background-color:white;
     color: black;
+    justify-content: center;
     
 }
-.functions li ul h2 p{
-    text-align: center;
-}
-.functions li ul h2{
-    font-size: 16px;
-}
-
 form{
     padding: 0px;
     margin-right: 100px;
@@ -76,11 +68,10 @@ form{
 
 
 @media (min-width: 576px) { 
-    .functions li img{
-    width: 50%;
-    height: 50%;
+    #specification li img{
+    width: 40%;
+    height: 40%;
+    max-width: 200px;
+    max-height: 200px;
     }
-}
-@media (min-width: 992px) { 
-
 }
