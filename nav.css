@@ -85,7 +85,7 @@ nav ul{
 
 nav ul li{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 nav ul li a{
@@ -118,7 +118,15 @@ a:hover{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    
+
+    nav ul{
+        display: none;
+    }
+
+    nav:hover ul{
+        display: block;
+    }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
