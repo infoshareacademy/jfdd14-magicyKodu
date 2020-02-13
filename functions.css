@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 600px) { 
-    .container {
+    .containerFunctions {
         flex-flow: column;
         align-items: center;
     }
