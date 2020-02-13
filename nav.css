@@ -36,34 +36,34 @@ footer{
     width: 100%;
 }
 
-.headerNav{
-    background-color: var(--forthColor);
-    color: var(--thirdColor);
-    font-family: var(--secondaryFont);
-}
-
 .container{
     width: 1200px;
     margin: 0 auto;
     padding: 0 auto;
 }
 
-#containerNav{
-    max-width: 100%;
-    display: block;
-}
-
 /* Navigation styles */
-.logo{
-    display: flex;
-    justify-content: center;
-}
-
 .headerNav{
-    padding: 0;
+    background-color: var(--forthColor);
+    color: var(--thirdColor);
+    font-family: var(--secondaryFont);
     font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    padding: 10px 20px;
 }
 
+.logo{
+    height: 40px;
+}
+
+img{
+    height: 40px;
+    width: auto; 
+}
 
 nav ul{
     padding: 0;
