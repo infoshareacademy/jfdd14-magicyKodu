@@ -1,21 +1,30 @@
 .containerAbout {
     max-width: 1200px;
     display: flex;
+    flex-flow: column;
     text-align: center;
-    margin: 7%;
-    
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
     
 }
 
 
 .aboutUs {
-    width:80%;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+p.info {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .aboutUs img{
@@ -50,19 +59,50 @@
 
 span.aboutUsInfo {
     font-weight: bold ;
-    font-size: ;
 }
 
-@media (max-width: 576px) { 
-    .container {
-        flex-flow: column;
-        align-items: center;
+
+    @media (min-width: 576px){
+        .containerAbout{
+            flex-flow: row;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+    
+        .functions img{
+            width: 80px;
+            height: 80px;
+           
+        }
+
+        p.info {
+            font-size: 20px;
+            font-family: ;
+        }
     }
-   
-
-
-
- 
+    
+    @media (min-width: 768px){
+    
+        
+    
+        .functions img{
+            width: 90px;
+            height: 90px;
+            
+        }
+    
+    }
+    
+    @media (min-width: 992px){
+    
+        .functions img{
+            width: 120px;
+            height: 120px;
+           
+        }
+    
+    
+    }
 
 
    
