@@ -114,12 +114,6 @@ a:hover{
         display: block;
     }
 
-    nav a{
-        padding: 1.2em;
-        display: flex;
-        justify-content: center; 
-    }
-
 }
 
 /* Small devices (landscape phones, 576px and up) */
