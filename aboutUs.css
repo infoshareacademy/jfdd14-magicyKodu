@@ -8,23 +8,24 @@
     margin-bottom: 50px;
 }
     
-}
-
-
 .aboutUs {
     
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
     padding: 15px;
     margin-bottom: 0px;
+}
+
+.team {
+    text-align: center;
 }
 
 p.info {
     font-family: 'Montserrat', sans-serif;
     margin-left: 20px;
     margin-right: 20px;
+
 }
 
 .aboutUs img{
@@ -65,19 +66,26 @@ span.aboutUsInfo {
     @media (min-width: 576px){
         .containerAbout{
             flex-flow: row;
+            
             margin-top: 100px;
             margin-bottom: 100px;
         }
     
-        .functions img{
+        .aboutUs {
+            width: 33.3%;
+            
+        }
+
+        .AboutUs img{
             width: 80px;
             height: 80px;
            
         }
 
         p.info {
-            font-size: 20px;
-            font-family: ;
+            font-size: 15px;
+            margin: 20px auto;
+            min-height: 100px;
         }
     }
     
