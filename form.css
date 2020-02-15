@@ -7,8 +7,14 @@
     --secondaryFont: 'Montserrat', sans-serif;
 }
 div.check{
-    margin: 0px 20px;
-    padding-bottom: 50px;
+    margin: 10px 20px;
+    padding-bottom: 20px;
+}
+.headliner{
+    text-align: center;
+    font-family: var(--primaryFont);
+    font-size: 38px;
+    padding-top: 70px;
 }
 .check{
     text-align: left;
@@ -20,6 +26,7 @@ div.check{
 .inscription{
     width: 35vw;
     height: 48vh;
+    max-height: 280px;
 }
 #specification {
     display: flex;
@@ -44,7 +51,7 @@ div.check{
 
  #premiere p{
     text-align: center;
-    font-size: 5vh;
+    font-size: 36px;
     padding-top: 70px;
  }
  div#premiere{
@@ -59,6 +66,9 @@ div.check{
     background-color: var(--forthColor);
     color: var(--thirdColor);
     font-family: var(--secondaryFont);
+    min-height: auto;
+    
+
  }
  .containerSpec{
     font-family: var(--secondaryFont);
@@ -100,18 +110,18 @@ form{
 
 @media (max-width: 576px) { 
     #specification li img{
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     }
     .specification{
-       font-size: 10px;
+       font-size: 12px;
     } 
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 700px) {
     div.check{
         margin: 0px 100px;
-        padding-bottom: 50px;
+        padding: 50px auto;
     }
     .inscription{
         width: 35vw;
@@ -128,7 +138,7 @@ form{
         height: 15vh;
     }
     #specification li img{
-        width: 175px;
-        height: 175px;
+        width: 150px;
+        height: 150px;
         }
 }
