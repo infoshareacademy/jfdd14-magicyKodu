@@ -56,6 +56,10 @@ div.check{
  .containerPremiere{
     background-color: var(--forthColor);
     color: var(--thirdColor);
+    font-family: var(--secondaryFont);
+ }
+ .containerSpec{
+    font-family: var(--secondaryFont);
  }
  div#premiere input.text{
     margin: auto 0;
