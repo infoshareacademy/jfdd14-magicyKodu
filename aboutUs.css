@@ -17,7 +17,7 @@
     align-items: center;
     padding: 15px;
     margin-bottom: 0px;
-    
+    border-bottom: 10px solid #e0e0e0;
 }
 
 .team {
@@ -28,6 +28,7 @@ p.info {
     font-family: 'Montserrat', sans-serif;
     margin-left: 20px;
     margin-right: 20px;
+    min-height: 100px;
 
 }
 
@@ -40,24 +41,24 @@ p.info {
     box-shadow:10px 10px 10px grey;  
 }
 
-.aboutUs .linkedButton {
-    border: none;
+.aboutUs .button {
+    border: 1px solid white;
     width: 75px;
     height: 75px;
     transition: transform .2s;
 
 }
 
-.linkedButton:hover {
+.button:hover {
     transform: translate(-5px, -10px); 
 }
 
-.button{
+.buttonGroup{
     flex-direction: row;
     
 }
 
-.button img{
+.buttonGroup img{
     margin-right: 15px;
 }
 
