@@ -37,7 +37,7 @@ p.info {
 }
 
 .aboutUs .button {
-    border: 1px solid white;
+    border: 3px solid white;
     width: 75px;
     height: 75px;
     transition: transform .2s;
