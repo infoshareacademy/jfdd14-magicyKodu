@@ -4,8 +4,7 @@
     flex-flow: column;
     text-align: center;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    
     background-color: white;
     
 }
@@ -17,6 +16,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
+    
 }
 
 .functions img {
@@ -32,8 +32,11 @@
 @media (min-width: 576px){
     .containerFunctions{
         flex-flow: row;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        
+    }
+
+    .functions{
+        width: 25%;
     }
 
     .functions img{

@@ -27,6 +27,14 @@ body{
     
 }
 
+.sectionHeader {
+    text-align: center;
+    background: white;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 80px 40px 40px ;
+}
+
 /* Extra small devices (landscape phones, less than 576px) */
 @media (max-width: 575px) { 
    
@@ -44,5 +52,6 @@ body{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+    .sectionHeader {
+     font-size: 50px;
 }
