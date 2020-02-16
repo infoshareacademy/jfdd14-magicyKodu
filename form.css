@@ -13,8 +13,6 @@ div.check{
 .headliner{
     text-align: center;
     font-family: var(--primaryFont);
-    font-size: 38px;
-    padding-top: 70px;
 }
 .check{
     text-align: left;
