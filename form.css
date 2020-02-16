@@ -21,6 +21,12 @@ div.check{
     width: 30vw;
     height: 10vh;  
 }
+.text{
+    cursor: pointer;
+}
+.check{
+    cursor: pointer;
+}
 .inscription{
     width: 35vw;
     height: 48vh;
@@ -106,7 +112,7 @@ form{
 
 
 
-@media (max-width: 576px) { 
+@media (max-width: 699px) { 
     #specification li img{
     width: 100px;
     height: 100px;
