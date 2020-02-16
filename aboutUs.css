@@ -71,6 +71,7 @@ span.aboutUsInfo {
         .aboutUs {
             width: 33.3%;
             border-bottom: none; 
+            margin-bottom: 60px;
         }
 
         .AboutUs img{
