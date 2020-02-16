@@ -60,12 +60,12 @@ footer{
     height: 40px;
 }
 
-img{
+.imgNav{
     height: 40px;
-    width: auto; 
+    width: auto;
 }
 
-.imgBig{
+#imgBig{
     display: none;
 }
 
@@ -146,15 +146,18 @@ a:hover{
     }
 
     nav ul li a{
-        font-size: 12px;
+        font-size: 14px;
         padding: 10px 0 10px 20px;
+        height: auto;
     }
 
-    .imgBig{
+    #imgBig{
         display: block;
+        height: 40px;
+        width: auto; 
     }
 
-    img{
+    #imgSmall{
         display: none;
     }
 
@@ -164,7 +167,6 @@ a:hover{
 @media (min-width: 992px) {
 
     nav ul li a{
-        font-size: 14px;
         padding: 10px 0 10px 25px;
     }
 
