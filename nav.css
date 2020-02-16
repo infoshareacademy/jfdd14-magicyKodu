@@ -65,6 +65,10 @@ img{
     width: auto; 
 }
 
+.imgBig{
+    display: none;
+}
+
 nav{
     width: 100%; 
     display: flex;
@@ -136,20 +140,33 @@ a:hover{
         display: none;
     }
 
+    nav ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+
     nav ul li a{
         font-size: 12px;
         padding: 10px 0 10px 20px;
     }
 
-    nav ul{
-        display: flex;
-        justify-content: flex-end;
+    .imgBig{
+        display: block;
+    }
+
+    img{
+        display: none;
     }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+    nav ul li a{
+        font-size: 14px;
+        padding: 10px 0 10px 25px;
+    }
 
 }
 
