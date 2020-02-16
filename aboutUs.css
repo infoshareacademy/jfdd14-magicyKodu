@@ -1,11 +1,11 @@
+
 .containerAbout {
     max-width: 1200px;
     display: flex;
     flex-flow: column;
     text-align: center;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    background-color: white;
 }
     
 .aboutUs {
@@ -15,16 +15,15 @@
     align-items: center;
     padding: 15px;
     margin-bottom: 0px;
+    border-bottom: 10px solid #e0e0e0;
 }
 
-.team {
-    text-align: center;
-}
 
 p.info {
     font-family: 'Montserrat', sans-serif;
     margin-left: 20px;
     margin-right: 20px;
+    min-height: 100px;
 
 }
 
@@ -37,24 +36,24 @@ p.info {
     box-shadow:10px 10px 10px grey;  
 }
 
-.aboutUs .linkedButton {
-    border: none;
+.aboutUs .button {
+    border: 3px solid white;
     width: 75px;
     height: 75px;
     transition: transform .2s;
 
 }
 
-.linkedButton:hover {
+.button:hover {
     transform: translate(-5px, -10px); 
 }
 
-.button{
+.buttonGroup{
     flex-direction: row;
     
 }
 
-.button img{
+.buttonGroup img{
     margin-right: 15px;
 }
 
@@ -66,9 +65,8 @@ span.aboutUsInfo {
     @media (min-width: 576px){
         .containerAbout{
             flex-flow: row;
+            margin: 0 auto;
             
-            margin-top: 100px;
-            margin-bottom: 100px;
         }
     
         .aboutUs {
@@ -85,20 +83,23 @@ span.aboutUsInfo {
         p.info {
             font-size: 15px;
             margin: 20px auto;
-            min-height: 100px;
+            min-height: 167px;
         }
     }
     
     @media (min-width: 768px){
-    
-        
     
         .functions img{
             width: 90px;
             height: 90px;
             
         }
-    
+        
+        p.info {
+            font-size: 15px;
+            margin: 20px auto;
+            min-height: 110px;
+        }
     }
     
     @media (min-width: 992px){
