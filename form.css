@@ -7,12 +7,15 @@
     --secondaryFont: 'Montserrat', sans-serif;
 }
 div.check{
-    margin: 10px 20px;
+    margin: 10px 20px 0px;
     padding-bottom: 20px;
 }
 .headliner{
     text-align: center;
     font-family: var(--primaryFont);
+    max-width: 1200px;
+    background-color: white;
+    margin: 0px auto;
 }
 .check{
     text-align: left;
@@ -40,7 +43,9 @@ div.check{
     text-align: center;
     width: 100%;
     padding: 70px 20px 20px;
-    
+    max-width: 1200px;
+    margin: 0px auto;
+    background-color: white;
     
 }
 
@@ -57,12 +62,12 @@ div.check{
     text-align: center;
     font-size: 36px;
     padding-top: 70px;
+    margin-top: 0px;
  }
  div#premiere{
     min-width: 200px;
     height: 300px;
     text-align: center;
-    margin-top: 100px;
     
      
  }
@@ -71,7 +76,8 @@ div.check{
     color: var(--thirdColor);
     font-family: var(--secondaryFont);
     min-height: auto;
-    
+    max-width: 1200px;
+    margin: 0px auto;
 
  }
  .containerSpec{
@@ -140,9 +146,21 @@ form{
     .inscription{
         width: 40vw;
         height: 15vh;
+        max-width: 500px;
     }
     #specification li img{
         width: 150px;
         height: 150px;
         }
+}
+@media (min-height: 1000px) {
+    .event {
+        height: 1vh;
+        
+    }
+    .inscription {
+        height: 12vh;
+        max-height: 300px;
+    }
+    
 }
