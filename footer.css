@@ -1,9 +1,9 @@
 footer{
     background-color: var(--forthColor);
     color: var(--thirdColor);
-    margin: 0 auto;
     font-family: var(--secondaryFont);
-    padding: 10px 0;
+    margin: 0;
+    padding: 5px 0;
 }
 
 .siteFooter{
@@ -16,5 +16,4 @@ footer{
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 0;
 }
