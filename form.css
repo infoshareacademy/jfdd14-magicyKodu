@@ -7,10 +7,11 @@
     --secondaryFont: 'Montserrat', sans-serif;
 }
 div.check{
-    margin: 10px 10px;
-    padding-bottom: 20px;
-    max-width: 1200px;
-    margin-bottom: 0px;
+    margin: 10px auto;
+    padding: 20px 10px;
+    max-width: 400px;
+    text-align: left;
+  
 }
 .headliner{
     text-align: center;
@@ -21,23 +22,27 @@ div.check{
 }
 .check{
     text-align: left;
+    cursor: pointer;
 }
 .event{
-    width: 30vw;
-    height: 10vh;  
+    width: 160px;
+    height: 60px;  
     font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0px;
 }
 .text{
     cursor: pointer;
 }
-.check{
-    cursor: pointer;
-}
+
 .inscription{
-    width: 35vw;
-    height: 48vh;
-    max-height: 280px;
+    width: 150px;
+    height: 220px;
+    text-align: left;
+    background-color: aqua;
+    margin: 5px 0px;
 }
+
 #specification {
     display: flex;
     list-style-type: none;
@@ -45,11 +50,11 @@ div.check{
     flex-wrap: wrap;
     text-align: center;
     width: 100%;
-    padding: 70px 20px 20px;
+    padding: 70px 5px 20px;
     max-width: 1200px;
     margin: 0px auto;
     background-color: white;
-    
+   
 }
 
 #specification li{
@@ -59,6 +64,11 @@ div.check{
     justify-content: center;
     width: 50%;
     align-items: center;
+    height: 380px;
+}
+#specification li img{
+    width: 50px;
+    height: 50px;
 }
 
  #premiere p{
@@ -121,60 +131,22 @@ form{
 
 
 
-@media (max-width: 699px) { 
-    #specification li img{
-    width: 100px;
-    height: 100px;
-    }
-    .specification{
-       font-size: 12px;
-    } 
-}
+
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 700px) {
-    div.check{
-        padding: 50px auto;
+
+@media (min-width: 768px){
+        .inscription{
+        width: 300px;
+        height: 120px;
+        text-align: left;
+        background-color: aqua;
     }
-    .inscription{
-        width: 35vw;
-        height: 20vh;
+    #specification li{
+        height: 300px;
     }
-    #specification li img{
-        width: 125px;
-        height: 125px;
-        }
-}
-@media (min-width: 1100px) {
-    .inscription{
-        width: 40vw;
-        height: 15vh;
-        max-width: 500px;
+    .event{
+        width: 300px;
+        height: 70px; 
+        font-size: 24px;
     }
-    #specification li img{
-        width: 150px;
-        height: 150px;
-        }
-}
-@media (min-height: 1000px) {
-    .event {
-        height: 1vh;
-        
-    }
-    .inscription {
-        height: 12vh;
-        max-height: 300px;
-    }
-    
-}
-@media (min-width: 1201px) {
-div.check{
-    margin: 10px auto;
-    margin-bottom: 0px;
-}
-}
-}
-@media (min-width: 992px) {
-    .headliner {
-     font-size: 50px;
-}
 }
