@@ -16,6 +16,7 @@
 
 .cookie-banner {
     display: flex;
+    position:fixed;
     background: #28bb76;
     font-family:'Montserrat', sans-serif;
     font-size: 12px;
@@ -32,3 +33,4 @@ div > button{
     border-radius: 5px;
     border: 2px solid white;
 }
+

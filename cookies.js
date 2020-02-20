@@ -1,15 +1,28 @@
-const cookieBanner = document.querySelector(".cookie-")
+
+
+const cookieBanner = document.querySelector(".cookie-banner");
 const cookieBtn = document.querySelector(".cookieBtn");
 
-cookieBtn.addEventListener("click", removeElement);
+cookieBtn.addEventListener("click", closeButton);
+
+function closeButton() {
+    cookieBanner.style.display = "none";
+    localStorage.setItem
+}
+
+
+
+
+
+/*
 
     // pobieram mój przycisk utworzony kilka linijek powyżej, szukając button w elemencie LI
     const btn = li.querySelector('button');
     
     //przypisuję do niego akcję kliknięcia, która ma na celu usuwanie elementu
-    btn.addEventListener("click", removeElementFromList);
-    return li;
-}
+    cookieBtn.addEventListener("click", removeElementFromList);
+    
+
 
 // funkcja mająca na celu usuwanie elementu z drzewa DOM
 const removeElementFromList = function (event) {
@@ -25,3 +38,4 @@ const removeElementFromList = function (event) {
     // aktualizuje stan w localstorage
     saveToLocalStorage();
 }
+*/
