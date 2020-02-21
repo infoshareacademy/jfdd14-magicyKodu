@@ -1,21 +1,37 @@
 const heroSection = document.querySelector(".hero");
 const btnNext = document.querySelector("#hero__btnNext");
 const btnPrev = document.querySelector("#hero__btnPrev");
+const btnCircle = document.getElementsByClassName("circle");
 
-let i = 0;
+const arr = [1, 2, 3];
+let num = 1;
+let lastNum = arr[arr.length-1];
+
 function changeImgToRight() {
-    (i < 4) ? i++ : i = 0;
-    const className = heroSection.getAttribute("class");
-    const num = className[className.length-1];
-   
-
-    className.indexOf(num);
-
-    
-    console.log(num);
+    (num < lastNum ) ? num++ : num = 1;
+    heroSection.classList = `hero hero${num}`;
 }
 
-btnNext.addEventListener("click", changeImgToRight);
+function changeImgToLeft() {
+    (num === 1) ? num = lastNum : num--;
+    heroSection.classList = `hero hero${num}`;
+}
+
+function changeImgByCircle(){
+    // btnCircle.classList.add("selected");
+}
+
+
+function addClickEvent(el, callback){
+    el.addEventListener("click", callback)
+}
+
+addClickEvent(btnNext, changeImgToRight);
+addClickEvent(btnPrev, changeImgToLeft);
+
+// btnCircle.addEventListener("click", changeImgByCircle);
+
+
 
 
 

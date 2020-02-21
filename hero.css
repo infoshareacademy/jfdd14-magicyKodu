@@ -10,26 +10,32 @@
 
 /* Hero styles */
 .hero{ 
-    background: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg) no-repeat center;
+    background-image: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg);
+    background: no-repeat center;
     background-size: cover;
     height: 100vh;
 }
 
 .hero1{
     background-image: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg);
-    transition: background-image 0.5s ease-in-out;
+    transition: background-image 3s ease-in-out;
 }
 
 .hero2{
     background-image: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg);
-    transition: background-image 0.5s ease-in-out;
-    opacity: 0.3;
+    background: yellow;
+    transition: background-image 3s ease-in-out;
 }
 
 .hero3{
     background-image: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg);
-    transition: background-image 0.5s ease-in-out;
     background: red;
+    transition: background-image 3s ease-in-out;
+    
+}
+
+.selected{
+    color: red;
 }
 
 .hero__header{
