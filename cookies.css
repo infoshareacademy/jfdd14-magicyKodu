@@ -16,12 +16,13 @@
 
 .cookie-banner {
     display: flex;
-    position:fixed;
+    position: fixed;
+    width: 100%;
     background: #28bb76;
     font-family:'Montserrat', sans-serif;
     font-size: 12px;
     color: white;
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 20px;
 }
 

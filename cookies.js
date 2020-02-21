@@ -7,14 +7,24 @@ cookieBtn.addEventListener("click", closeButton);
 
 function closeButton() {
     cookieBanner.style.display = "none";
-    localStorage.setItem
+    localStorage.setItem("cookie", "true");
 }
 
+function checkCookies() {
+    if (localStorage.getItem("cookie") === 'true') {
+        closeButton();
+    }
 
+}
 
-
+checkCookies();
 
 /*
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+
+
 
     // pobieram mój przycisk utworzony kilka linijek powyżej, szukając button w elemencie LI
     const btn = li.querySelector('button');
