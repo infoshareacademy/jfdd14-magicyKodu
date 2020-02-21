@@ -17,21 +17,23 @@
 .cookie-banner {
     display: flex;
     position: fixed;
+    bottom: 0;
     width: 100%;
     background: #28bb76;
     font-family:'Montserrat', sans-serif;
     font-size: 12px;
+    text-align: center;
     color: white;
-    margin-top: 60px;
-    padding: 20px;
+    padding: 20px 320px ;
 }
 
 div > button{
     background: #1a1a1a;
     color:white;
-    width: 20px;
-    height: 20px;
+    height: 25px;
     border-radius: 5px;
     border: 2px solid white;
+    line-height: 3px;
+    
 }
 
