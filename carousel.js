@@ -1,23 +1,22 @@
-var slide = 0;
+const heroSection = document.querySelector(".hero");
+const btnNext = document.querySelector("#hero__btnNext");
+const btnPrev = document.querySelector("#hero__btnPrev");
 
-function carousel() {
+let i = 0;
+function changeImgToRight() {
+    (i < 4) ? i++ : i = 0;
+    const className = heroSection.getAttribute("class");
+    const num = className[className.length-1];
+   
+
+    className.indexOf(num);
+
     
-    const carouselImg = document.querySelectorAll(".hero");
-
-    for (let i = 0; i < carouselImg.length; i++){
-        carouselImg[i].style.display = "none";
-    }
-
-    slide++;
-
-    if (slide > carouselImg.length) {
-        slide = 1
-    };
-    carouselImg[slide-1].style.display = "block";
-    //setTimeout(carousel, 5000); 
+    console.log(num);
 }
 
-carousel();
+btnNext.addEventListener("click", changeImgToRight);
+
 
 
 
