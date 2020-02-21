@@ -16,9 +16,9 @@
     transition: background 1s ease-out;
 }
 
-.hero:hover{
+.hero{
     background: url(https://i.postimg.cc/GmjkMz4c/mercury.jpg) no-repeat center;
-    background: yellow;
+    background: red;
 }
 
 .hero__header{
