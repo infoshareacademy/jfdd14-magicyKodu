@@ -1,0 +1,59 @@
+/* General styles */
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+.cookie-banner {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #28bb76;
+    font-family:'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    padding: 20px;
+   
+
+}
+
+.cookie-text {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+div > button{
+    background: #1a1a1a;
+    color:white;
+    height: 25px;
+    border-radius: 5px;
+    border: 2px solid white;
+    line-height: 3px;
+    
+}
+
+@media (min-width: 576px){
+
+}
+
+@media (max-width: 768px){
+ .cookie-text {
+     font-size: 10px;
+ }
+}
+
+@media (min-width: 992px){
+
+}
