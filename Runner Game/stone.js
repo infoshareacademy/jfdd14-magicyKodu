@@ -6,9 +6,3 @@ class Stone extends Properties {
         super(x, y);
     }
 }
-
-const stone = new Stone(500, 550);
-console.log(stone);
-
-
-stone.print();
