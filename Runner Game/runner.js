@@ -1,7 +1,7 @@
 class Runner extends Properties {
     width = 20;
     height = 100;
-    speed = 50;
+    speed = 1;
     gravity = 10;
     color = "black";
     constructor(x, y) {
@@ -9,9 +9,12 @@ class Runner extends Properties {
     }
 
     move = (key) => {
-        if (key === "ArrowUp") {
-            this.y -= 50;
+        if (this.y < 200) {
+            this.speed = 0;
         }
+            this.y -= this.speed;
+            
+       
     }
 };
 
@@ -20,7 +23,6 @@ class Runner extends Properties {
 
 const runner = new Runner(100, 400);
 console.log(runner);
-
 
 
 
@@ -33,7 +35,10 @@ function setup() {
     window.setInterval(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         runner.print();
-    }, 250);
+        runner.move();
+        
+    },);
 }
 
-setup();
+window.addEventListener('keydown', setup)
+// setup();

@@ -9,7 +9,7 @@ const columns = canvas.width/scale;
 
 // S N A K E 
 
-
+/*
 
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d");
@@ -129,3 +129,5 @@ function setup() {
 
 // Inicjalizacja gry
 setup();
+
+*/
