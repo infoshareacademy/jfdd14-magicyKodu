@@ -21,13 +21,13 @@ class Game {
 
     updateBananas = () => {
         
-        if (banana.x === 600) {
+        // if (banana.x === 600) {
             
-            // bananas.push(banana);
-            // console.log(bananas);
-            console.log("lalalalala");
+        //     // bananas.push(banana);
+        //     // console.log(bananas);
+        //     console.log("lalalalala");
             
-        }
+        // }
     }
 
     print = () => {
@@ -39,14 +39,29 @@ class Game {
 
 const game = new Game();
 
+let bananas = [];
+
+function newBanana() {
+    const min = 2;
+    const max = 5;
+    let rand = Math.floor(Math.random() * (max - min + 1) + min); 
+    bananas.push(banana);
+    banana.move(5);
+    banana.print();
+   console.log(bananas);
+    setTimeout(newBanana, rand * 1000);
+  }
+  
+  
 
 function setup() {
-    game.print();  
+    newBanana(); 
     window.setInterval(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);  
-        game.updateBananas();     
-        banana.move(5);
-        banana.print();
+         
+        
+        // game.updateBananas();     
+          
         floor.print();     
     }, 50);
     

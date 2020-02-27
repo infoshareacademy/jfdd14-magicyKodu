@@ -11,4 +11,4 @@ class Banana extends Properties{
     }
 }
 
-const banana = new Banana(1300, 300);
+const banana = new Banana(1200, 300);
