@@ -40,6 +40,7 @@ class Banana extends Properties{
     }
 }
 
+
 //----------Class Stone----------
 class Stone extends Properties{
     x = 1200;
@@ -58,6 +59,7 @@ class Stone extends Properties{
 
 //----------Class Runner----------
 class Runner extends Properties {
+    x = 100;
     width = 20;
     height = 100;
     speed = 10;
@@ -80,8 +82,18 @@ class Runner extends Properties {
       
     }
     
-    resetSpeed = () => {console.log('rs'); this.speed=10;}
-};
+    resetSpeed = () => {
+        console.log('rs'); 
+        this.speed=10;
+    }
+
+    checkCollision = (banana) => {
+        if (banana.x < this.x)
+            {console.log("lala");
+             
+        }
+    }
+}
 
 const runner = new Runner(100, 400);
 
@@ -105,50 +117,56 @@ function newBananas() {
     if (bananas.length === 10) {
         bananas.shift();
     }
-    setTimeout(newBananas, rand * 500);
+    setTimeout(newBananas, rand * 1000);
 }
 
 function newStones() {
-    let rand = getRandomInt(0,20);
+    let rand = getRandomInt(0,10);
     stones.push(new Stone);
     if (stones.length === 10) {
         stones.shift();
     }
-    setTimeout(newStones, rand * 500);
+    setTimeout(newStones, rand * 1000);
 }
   
 function setUp() {
-    window.addEventListener("keydown", event => 
-    {runner.resetSpeed(); 
-    runner.move(event.key); })
+    
     newBananas(); 
     newStones();
+    
+    
     window.setInterval( () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         floor.print();
         bananas.forEach( el => {
             el.print();
-            el.move(5);
+            el.move(10);
         });
         runner.print();
         runner.move();
         runner.isRun = true; 
         stones.forEach( el => {
             el.print();
-            el.move(5);
-        });   
+            el.move(10);
+        });
+        // runner.checkCollision(banana);   
     }, 50);
+    
     
 }
 
+window.addEventListener("keydown", event => {
+    runner.resetSpeed(); 
+    runner.move(event.key); 
+})
+
 btn.addEventListener("click", setUp);
 
-let moveInterval;
+// let moveInterval;
 
 
 
-// setUp();
-
+//----------OLD VERSION----------
 // let stones = [];
 // let bananas = [];
 
