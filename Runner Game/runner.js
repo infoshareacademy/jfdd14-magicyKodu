@@ -1,7 +1,7 @@
 class Runner extends Properties {
     width = 20;
     height = 100;
-    speed = 1;
+    speed = 10;
     gravity = 10;
     color = "black";
     constructor(x, y) {
@@ -9,12 +9,15 @@ class Runner extends Properties {
     }
 
     move = (key) => {
-        if (this.y < 200) {
-            this.speed = 0;
-        }
-            this.y -= this.speed;
-            
-       
+                console.log('move');
+                this.y -= this.speed ;
+                if (this.y < 200) {
+                 this.speed = -this.speed ;
+                } if (this.y > 400) {
+                    this.speed = 0;
+                }
+        
+    
     }
 };
 
@@ -37,7 +40,7 @@ function setup() {
         runner.print();
         runner.move();
         
-    },);
+    },50);
 }
 
 window.addEventListener('keydown', setup)
