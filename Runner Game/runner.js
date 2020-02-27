@@ -11,8 +11,3 @@ class Runner extends Properties{
     }
 
 }
-
-const runner = new Runner(300, 300);
-console.log(runner);
-
-runner.print();
