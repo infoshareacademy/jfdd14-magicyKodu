@@ -4,7 +4,6 @@ const scale = 10;
 const rows = canvas.height/scale;
 const columns = canvas.width/scale;
 
-
 let stones = [];
 let bananas = [];
 
