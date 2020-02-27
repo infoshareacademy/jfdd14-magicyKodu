@@ -2,13 +2,12 @@ class Stone extends Properties {
     width = 50;
     height = 50;
     color= "gray";
+    speed = 10;
     constructor(x, y){
         super(x, y);
     }
+
+    move() {
+        this.x -= this.speed;
+    }
 }
-
-const stone = new Stone(500, 550);
-console.log(stone);
-
-
-stone.print();

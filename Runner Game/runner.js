@@ -21,7 +21,7 @@ class Runner extends Properties {
                 } 
       
     }
-
+    
     resetSpeed = () => {console.log('rs'); this.speed=10;}
 };
 
@@ -38,3 +38,4 @@ window.addEventListener("keydown", event =>
         runner.move();
         runner.isRun = true;
 }, 50); });
+
