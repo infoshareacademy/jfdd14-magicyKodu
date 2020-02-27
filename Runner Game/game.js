@@ -33,21 +33,16 @@ function getRandomInt(min, max) {
 }
 
 function newBananas() {
-    let rand = getRandomInt(10,20);
+    let rand = getRandomInt(0,20);
     bananas.push(new Banana);
-    console.log(bananas);
-    setTimeout(newBananas, rand * 500);
-}
-
-function clearBananas() {
-    if (new Banana < 0) {
+    if (bananas.length === 10) {
         bananas.shift();
     }
+    setTimeout(newBananas, rand * 500);
 }
   
 function setUp() {
-    newBananas();
-    clearBananas();
+    newBananas(); 
     window.setInterval ( () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         floor.print();   
