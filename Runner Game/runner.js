@@ -31,10 +31,10 @@ console.log(runner);
 let moveInterval;
 
 
-window.addEventListener("keydown", event => {runner.resetSpeed(); runner.move(event.key); moveInterval = window.setInterval(() => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    runner.print();
-    runner.move();
-    runner.isRun = true;
-
+window.addEventListener("keydown", event => 
+    {runner.resetSpeed(); runner.move(event.key); moveInterval = window.setInterval(() => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        runner.print();
+        runner.move();
+        runner.isRun = true;
 }, 50); });
