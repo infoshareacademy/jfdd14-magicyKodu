@@ -4,6 +4,10 @@ const scale = 20;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 const btn = document.querySelector("button");
+const result = document.querySelector(".score");
+
+x = 0;
+y = 0;
 
 class Banana extends Properties{
     x = 1200;
@@ -31,11 +35,19 @@ function getRandomInt(min, max) {
 function newBananas() {
     let rand = getRandomInt(10,20);
     bananas.push(new Banana);
+    console.log(bananas);
     setTimeout(newBananas, rand * 500);
+}
+
+function clearBananas() {
+    if (new Banana < 0) {
+        bananas.shift();
+    }
 }
   
 function setUp() {
-    
+    newBananas();
+    clearBananas();
     window.setInterval ( () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         floor.print();   
@@ -48,6 +60,6 @@ function setUp() {
 }
 
 btn.addEventListener("click", setUp);
-newBananas();
+
 // setUp();
 
