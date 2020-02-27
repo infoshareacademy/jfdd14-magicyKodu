@@ -22,4 +22,3 @@
 //     }
 // }
 
-const floor = new Properties(0, 500, 1300, 100, "brown");
