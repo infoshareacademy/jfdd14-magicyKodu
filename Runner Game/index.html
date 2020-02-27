@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAME - RUNNER</title>
+    <link rel="stylesheet" href="game.css">
 </head>
 <body>
+    <header>
+        <h1>Runner Game</h1>
+        <button>START</button>
+        <div class="score"></div>
+    </header>
 
-    <canvas 
-    class="canvas" 
-    width="1200px" 
-    height="600px"
-    style="background-color: lightblue;">
-    </canvas>
+    <main>
+        <canvas 
+        class="canvas" 
+        width="1200px" 
+        height="600px"
+        style="background-color: lightblue; border: 5px solid blue;">
+        </canvas>
+    </main>
 
-    
+    <footer>
+        <div id="containerFooter">
+            <p class="siteFooter">Copyright © 2020  |  Planner 4 runner  |  Wszelkie prawa zastrzeżone.</p>
+            <p class="siteFooter">Email: planner4runner@gmail.com</p>
+        </div>
+    </footer> 
+
+<!-----------------SCRIPTS----------------->
     <script src="properties.js"></script>
     <script src="banana.js"></script>
     <script src="stone.js"></script>
     <script src="runner.js"></script>
+    <script src="floor.js"></script>
     <script src="game.js"></script>
+
 </body>
 </html>
