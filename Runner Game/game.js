@@ -59,11 +59,9 @@ class Stone extends Properties{
 
 //----------Class Runner----------
 class Runner extends Properties {
-    x = 100;
     width = 20;
     height = 100;
-    speed = 10;
-    gravity = 10;
+    speed = 0;
     color = "black";
     isRun = true;
     constructor(x, y) {
@@ -74,12 +72,10 @@ class Runner extends Properties {
         this.y -= this.speed;
             if (this.y < 250) {
                 this.speed = -this.speed ;
-                } if (this.y > 400 && this.isRun) {
+                } if (this.y > 390 && this.isRun) {
                     this.speed = 0;
                     this.isRun = false;
-                    // clearInterval(moveInterval);
-                } 
-      
+                }    
     }
     
     resetSpeed = () => {
@@ -114,6 +110,7 @@ function getRandomInt(min, max) {
 function newBananas() {
     let rand = getRandomInt(0,20);
     bananas.push(new Banana);
+    
     if (bananas.length === 10) {
         bananas.shift();
     }
@@ -138,7 +135,8 @@ function setUp() {
     window.setInterval( () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         floor.print();
-        bananas.forEach( el => {
+        bananas.forEach(el => {
+            console.log(el.x);
             el.print();
             el.move(10);
         });
@@ -149,6 +147,7 @@ function setUp() {
             el.print();
             el.move(10);
         });
+        
         // runner.checkCollision(banana);   
     }, 50);
     
@@ -158,11 +157,11 @@ function setUp() {
 window.addEventListener("keydown", event => {
     runner.resetSpeed(); 
     runner.move(event.key); 
+
 })
 
 btn.addEventListener("click", setUp);
 
-// let moveInterval;
 
 
 
