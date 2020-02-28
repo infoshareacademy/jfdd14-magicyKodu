@@ -18,16 +18,63 @@
     margin: 0 auto;
     
 }
+.flip-card-front img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0px;
+}
 
 .functions img {
     width: 80px;
     height: 80px;
     margin-top: 0px;
     margin-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 50px;
 }
-
-
+.containerAbout {
+    max-width: 1200px;
+    width: 100%;
+    height: 1200px;
+    perspective: 500px;
+  }
+  
+  .aboutUs{
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .containerAbout:hover .aboutUs {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 90%;
+    height: 500px;
+   
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    color: black;
+    
+  }
+  #team > div > div:nth-child(2) > div.flip-card-front > h3{
+      margin-bottom: 0px;
+  }
+  
+  .flip-card-back {
+    background-color: #427c5b;
+    color: white;
+    transform: rotateY(180deg);
+    width: 400px;
+  }
 
 @media (min-width: 576px){
     .containerFunctions{
@@ -44,6 +91,12 @@
         height: 80px;
        
     }
+    .flip-card-front img{
+        width: 150px;
+        height: 150px;
+        margin-bottom: 0px;
+    }
+    
 }
 
 @media (min-width: 768px){
@@ -65,7 +118,4 @@
         height: 120px;
        
     }
-
-
-
 }
