@@ -1,13 +1,11 @@
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d"); 
-const scale = 20; 
+const scale = 10; 
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 const btn = document.querySelector("button");
 const result = document.querySelector(".score");
 
-x = 0;
-y = 0;
 
 //----------General Class Properties----------
 class Properties{
@@ -26,20 +24,20 @@ class Properties{
 
 //----------Class Banana----------
 class Banana extends Properties{
-    x = 1200;
-    y = 300;
-    width = 10;
-    height = 30;
-    color = "yellow";
-    constructor(x, y){
-        super(x, y);
+    constructor(x, y, width, height, color){
+        super(x, y, width, height, color); 
+        this.x = 1200;
+        this.y = 300;
+        this.width = 10;
+        this.height = 30;
+        this.color = "yellow"; 
     }
 
-    move = (speed) => {
-        this.x -= speed;
+    move = () => {
+        this.x -= scale;
     }
+
 }
-
 
 //----------Class Stone----------
 class Stone extends Properties{
@@ -52,9 +50,10 @@ class Stone extends Properties{
         super(x, y);
     }
 
-    move = (speed) => {
-        this.x -= speed;
+    move = () => {
+        this.x -= scale;
     }
+
 }
 
 //----------Class Runner----------
@@ -63,32 +62,29 @@ class Runner extends Properties {
     height = 100;
     speed = 0;
     color = "black";
-    isRun = true;
+    score = 0;
+    isJump = true;
     constructor(x, y) {
         super(x, y);
     }
 
-    move = (key) => {
+    move = (e) => { 
+
         this.y -= this.speed;
-            if (this.y < 250) {
-                this.speed = -this.speed ;
-                } if (this.y > 390 && this.isRun) {
-                    this.speed = 0;
-                    this.isRun = false;
-                }    
+     
+        if (this.y < 250) {
+            this.speed = -(this.speed);   
+        }
+        if (this.y > 390) {
+            this.speed = 0;    
+        }    
+
     }
     
     resetSpeed = () => {
-        console.log('rs'); 
-        this.speed=10;
+        this.speed = scale;
     }
 
-    checkCollision = (banana) => {
-        if (banana.x < this.x)
-            {console.log("lala");
-             
-        }
-    }
 }
 
 const runner = new Runner(100, 400);
@@ -109,8 +105,8 @@ function getRandomInt(min, max) {
 
 function newBananas() {
     let rand = getRandomInt(0,20);
-    bananas.push(new Banana);
-    
+    const banana = new Banana;
+    bananas.push(banana);     
     if (bananas.length === 10) {
         bananas.shift();
     }
@@ -125,39 +121,57 @@ function newStones() {
     }
     setTimeout(newStones, rand * 1000);
 }
-  
-function setUp() {
-    
-    newBananas(); 
-    newStones();
-    
-    
-    window.setInterval( () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        floor.print();
-        bananas.forEach(el => {
-            console.log(el.x);
-            el.print();
-            el.move(10);
-        });
-        runner.print();
-        runner.move();
-        runner.isRun = true; 
-        stones.forEach( el => {
-            el.print();
-            el.move(10);
-        });
-        
-        // runner.checkCollision(banana);   
-    }, 50);
-    
-    
+
+function addScore() {
+	runner.score += 1;
 }
 
-window.addEventListener("keydown", event => {
-    runner.resetSpeed(); 
-    runner.move(event.key); 
+function drawScore() {
+	result.innerHTML = runner.score;
+}
 
+function bananaScore() {
+	bananas.forEach(el =>check(el));
+}
+  
+
+function check(el){
+    if (el.x < runner.x + runner.width && runner.y < el.y + el.height){
+        console.log(el.x);
+        addScore();
+        drawScore();
+    } else {
+        
+    }
+}
+  
+function setUp() {  
+    newBananas(); 
+    newStones();
+    window.setInterval( () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);       
+        floor.print();
+        runner.print();
+        runner.move();  
+        bananas.forEach(el => {
+            el.print();
+            el.move();                 
+        });     
+        stones.forEach( el => {
+            el.print();
+            el.move();
+        }); 
+        bananaScore();         
+    }, 30);
+}
+
+
+
+window.addEventListener("keydown", e => {
+    if (e.code === "ArrowUp") {
+        runner.resetSpeed(); 
+        runner.move();
+    }
 })
 
 btn.addEventListener("click", setUp);
