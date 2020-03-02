@@ -24,14 +24,11 @@ class Properties{
 
 //----------Class Banana----------
 class Banana extends Properties{
-    constructor(x, y, width, height, color){
-        super(x, y, width, height, color); 
-        this.x = 1200;
-        this.y = 300;
-        this.width = 10;
-        this.height = 30;
-        this.color = "yellow"; 
-    }
+    x = 1200;
+    y = 300;
+    width = 10;
+    height = 30;
+    color = "yellow"; 
 
     move = () => {
         this.x -= scale;
@@ -46,9 +43,6 @@ class Stone extends Properties{
     width = 50;
     height = 50;
     color= "gray";
-    constructor(x, y){
-        super(x, y);
-    }
 
     move = () => {
         this.x -= scale;
@@ -63,12 +57,12 @@ class Runner extends Properties {
     speed = 0;
     color = "black";
     score = 0;
-    isJump = true;
+    canJump = true;
     constructor(x, y) {
         super(x, y);
     }
 
-    move = (e) => { 
+    move = () => { 
 
         this.y -= this.speed;
      
@@ -81,8 +75,10 @@ class Runner extends Properties {
 
     }
     
-    resetSpeed = () => {
-        this.speed = scale;
+    jump = () => {
+        if (this.canJump){
+            this.speed = scale;
+        }   
     }
 
 }
@@ -105,29 +101,31 @@ function getRandomInt(min, max) {
 
 function newBananas() {
     let rand = getRandomInt(0,20);
-    const banana = new Banana;
-    bananas.push(banana);     
-    if (bananas.length === 10) {
+    const banana = new Banana();
+    bananas.push(banana);  
+    console.log(bananas);   
+    if (banana.x < runner.x + runner.width) {
         bananas.shift();
+        console.log(bananas);
     }
     setTimeout(newBananas, rand * 1000);
 }
 
 function newStones() {
     let rand = getRandomInt(0,10);
-    stones.push(new Stone);
+    stones.push(new Stone());
     if (stones.length === 10) {
         stones.shift();
     }
     setTimeout(newStones, rand * 1000);
 }
 
-function addScore() {
-	runner.score += 1;
-}
 
-function drawScore() {
-	result.innerHTML = runner.score;
+
+
+function addScore() {
+    runner.score += 1;
+    result.innerHTML = runner.score;
 }
 
 function bananaScore() {
@@ -136,16 +134,11 @@ function bananaScore() {
   
 
 function check(el){
-    if (el.x < runner.x + runner.width && runner.y < el.y + el.height){
-        console.log(el.x);
-        addScore();
-        drawScore();
-    } else {
-        
-    }
+
 }
   
-function setUp() {  
+function setUp() { 
+    
     newBananas(); 
     newStones();
     window.setInterval( () => {
@@ -163,13 +156,14 @@ function setUp() {
         }); 
         bananaScore();         
     }, 30);
+    // check();
 }
 
 
 
 window.addEventListener("keydown", e => {
     if (e.code === "ArrowUp") {
-        runner.resetSpeed(); 
+        runner.jump(); 
         runner.move();
     }
 })
