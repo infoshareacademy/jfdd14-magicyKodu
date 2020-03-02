@@ -1,6 +1,6 @@
 /* General styles */
 :root{
-    --primaryColor: #28bb76;
+    --primaryColor: paintDots(num);
     --secondaryColor: #427c5b;
     --thirdColor: #fff;
     --forthColor: #1a1a1a;
@@ -27,12 +27,11 @@
 
 .hero3{
     background-image: url(img/hero_3.jpg);
-    transition: background-image 0.5s ease-in-out;
-    
+    transition: background-image 0.5s ease-in-out;  
 }
 
-.selected{
-    color: red;
+.active{
+    color: var(--primaryColor);
 }
 
 .hero__header{
