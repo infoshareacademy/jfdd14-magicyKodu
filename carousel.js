@@ -6,8 +6,10 @@ const dot2 = document.querySelector("#hero__dot2");
 const dot3 = document.querySelector("#hero__dot3");
 
 const arr = [1, 2, 3];
-let num = 1;
+// let num = 1;
 let lastNum = arr[arr.length-1];
+
+myFunc();
 
 function changeImgToRight() {
     (num < lastNum ) ? num++ : num = 1;
@@ -43,6 +45,8 @@ function changeImgByCircle3(){
     dot3.style.color = "#28bb76";
 }
 
+
+
 function addClickEvent(el, callback){
     el.addEventListener("click", callback)
 }
@@ -58,7 +62,8 @@ dot1.addEventListener("click", changeImgByCircle1);
 dot2.addEventListener("click", changeImgByCircle2);
 dot3.addEventListener("click", changeImgByCircle3);
 
-myFunc();
+
+
 
 
 
