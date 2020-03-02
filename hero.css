@@ -31,28 +31,23 @@
 }
 
 .hero__arrow{
-    display: flex;
-    justify-content: space-between;
-    font-size: 40px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    
-}
-
-.hero__arrow__single{
-    cursor: pointer; 
-    
+    display: none;   
 }
 
 i{
     padding: 10px;
 }
 
-
-
 .active{
     color: var(--primaryColor);
+}
+
+.hero__dot{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    width: 100%;
 }
 
 .hero__header{
@@ -120,8 +115,7 @@ h3{
 
     .hero__header{
         text-align: left;
-        padding: 30px;
-        margin-left: 60px;
+        padding: 70px;
     }
 
     h2{
@@ -139,7 +133,18 @@ h3{
     }
 
     .hero__arrow{
-        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        font-size: 40px;
+        padding: 10px; 
+        cursor: pointer; 
+    }
+
+    .hero__dot{
+        top: 95%;
     }
 
 }
@@ -147,6 +152,10 @@ h3{
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
+    .hero__header{
+        padding: 40px;
+        margin-left: 60px;
+    }
 
     h2{
         line-height: 46px;
@@ -156,6 +165,10 @@ h3{
     h3{
         line-height: 44px;
         font-size: 28px;
+    }
+
+    .hero__arrow{
+        padding: 20px;  
     }
 
 }
