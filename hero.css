@@ -21,7 +21,7 @@
 }
 
 .hero2{
-    background-image: url(img/hero_2.png);
+    background-image: url(img/hero_2.jpg);
     transition: background-image 0.5s ease-in-out;
 }
 
@@ -29,6 +29,27 @@
     background-image: url(img/hero_3.jpg);
     transition: background-image 0.5s ease-in-out;  
 }
+
+.hero__arrow{
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    
+}
+
+.hero__arrow__single{
+    cursor: pointer; 
+    
+}
+
+i{
+    padding: 10px;
+}
+
+
 
 .active{
     color: var(--primaryColor);
@@ -100,6 +121,7 @@ h3{
     .hero__header{
         text-align: left;
         padding: 30px;
+        margin-left: 60px;
     }
 
     h2{
@@ -114,6 +136,10 @@ h3{
 
     .btn{
         font-size: 1.2em;
+    }
+
+    .hero__arrow{
+        padding: 20px;
     }
 
 }
