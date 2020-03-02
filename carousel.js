@@ -24,7 +24,7 @@ function changeImgToLeft() {
     paintDot(num);
 }
 
-function change(num){
+function changeImg(num){
     heroSection.classList = `hero hero${num}`;
     paintDot(num);    
 }
