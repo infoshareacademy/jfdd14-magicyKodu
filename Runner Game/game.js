@@ -106,12 +106,10 @@ function getRandomInt(min, max) {
 
 function newBananas() {
     let rand = getRandomInt(0,20);
-    const banana = new Banana();
-    bananas.push(banana);  
+    bananas.push(new Banana());  
     console.log(bananas);   
-    if (banana.x < runner.x + runner.width) {
+    if (bananas.length === 10) {
         bananas.shift();
-        console.log(bananas);
     }
     setTimeout(newBananas, rand * 1000);
 }
@@ -123,22 +121,22 @@ function newStones() {
         stones.shift();
     }
     setTimeout(newStones, rand * 1000);
+} 
+
+function catchBanana(el){
+    if (el.x <= runner.x + runner.width && el.x + el.width >= runner.x // check x from both sides
+        && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
+        runner.score += 1;
+        result.innerHTML = runner.score;
+        el.bananaHit = true;
+        // https://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property
+        let removeIndex = bananas.map(function(el) { 
+            return el.bananaHit; 
+        }).indexOf(true);
+        // remove object
+        bananas.splice(removeIndex, 1);
+    } 
 }
-
-
-// function addScore() {
-//     runner.score += 1;
-//     result.innerHTML = runner.score;
-// }
-
-// function bananaScore() {
-// 	bananas.forEach(el =>check(el));
-// }
-  
-
-// function check(el){
-
-// }
 
 newBananas(); 
 newStones();
@@ -148,16 +146,15 @@ function setUp() {
     floor.print();
     runner.print();
     runner.move();
-  
     bananas.forEach(el => {
         el.print();
-        el.move();                 
+        el.move(); 
+        catchBanana(el);                
     });     
     stones.forEach( el => {
         el.print();
         el.move();
-    }); 
-    // bananaScore();         
+    });         
     window.requestAnimationFrame(setUp);
 }
 
