@@ -16,17 +16,17 @@
 }
 
 .hero1{
-    background-image: url(img/hero_1.jpg);
+    background-image: url("../img/hero_1.jpg");
     transition: background-image 0.5s ease-in-out;
 }
 
 .hero2{
-    background-image: url(img/hero_2.jpg);
+    background-image: url("../img/hero_2.jpg");
     transition: background-image 0.5s ease-in-out;
 }
 
 .hero3{
-    background-image: url(img/hero_3.jpg);
+    background-image: url("../img/hero_3.jpg");
     transition: background-image 0.5s ease-in-out;  
 }
 
