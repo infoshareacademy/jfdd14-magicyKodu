@@ -12,9 +12,6 @@ let num = 1;
 //last number in array
 let lastNum = arr[arr.length-1];
 
-//declaration of variable (crusial from interval point of view)
-let changeImgAuto;
-
 //changing slide/image when click on right arrow
 const changeImgToRight = function(e) {
     (num < lastNum ) ? num++ : num = 1;
@@ -51,6 +48,9 @@ function paintDot(num){
         dot3.classList.add("active");   
     }
 }
+
+//declaration of variable (crusial from interval point of view)
+let changeImgAuto;
 
 //painting first dot when website starts
 paintDot(num);
