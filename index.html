@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planner 4 runner</title>
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/aboutUs.css">
-    <link rel="stylesheet" href="css/functions.css">
-    <link rel="stylesheet" href="css/aboutUs.css">
-    <link rel="stylesheet" href="css/functions.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
    
 
@@ -47,7 +47,7 @@
     </div>
 
     <main>
-        <section class="hero active" id="home">
+        <section class="hero hero1" id="home">
             <header class="hero__header"> 
                 <div class="hero__header__titles">
                     <h2>Zaplanuj, pobiegnij!</h2>
@@ -55,8 +55,17 @@
                 </div>
                 <div class="hero__header__btn">
                     <a href="#premiere1" class="btn">Zapisz się na premierę</a> 
-                </div>                 
+                </div>
             </header> 
+            <div class="hero__arrow">
+                <a class="hero__arrow__single" id="hero__arrowPrev"><i class="fas fa-chevron-left"></i></button>
+                <a class="hero__arrow__single" id="hero__arrowNext"><i class="fas fa-chevron-right"></i></button> 
+            </div>
+            <div class="hero__dot">
+                <a href="#" class="hero__dot__single" id="hero__dot1" onclick="changeImg(1)"><i class="fas fa-circle"></i></a> 
+                <a href="#" class="hero__dot__single" id="hero__dot2" onclick="changeImg(2)"><i class="fas fa-circle"></i></a> 
+                <a href="#" class="hero__dot__single" id="hero__dot3" onclick="changeImg(3)"><i class="fas fa-circle"></i></a> 
+            </div>                 
         </section>
 
         <section id="why_us">
@@ -222,8 +231,12 @@
         </div>
     </footer>  
 
+    <!-- SCRIPT JS -->
+
     <script src="js/cookies.js"></script> 
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="carousel.js"></script>
+
 </body>
 
 </html>
