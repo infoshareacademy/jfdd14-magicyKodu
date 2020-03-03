@@ -12,27 +12,27 @@ let num = 1;
 //last number in array
 let lastNum = arr[arr.length-1];
 
-//painting first dot when website starts
-paintDot(num);
+//declaration of variable (crusial from interval point of view)
+let changeImgAuto;
 
-//changing silde/image when click on right arrow
-function changeImgToRight() {
+//changing slide/image when click on right arrow
+const changeImgToRight = function(e) {
     (num < lastNum ) ? num++ : num = 1;
     heroSection.classList = `hero hero${num}`;
     paintDot(num);
 }
 
 //changing silde/image when click on left arrow
-function changeImgToLeft() {
+const changeImgToLeft = function() {
     (num === 1) ? num = lastNum : num--;
     heroSection.classList = `hero hero${num}`;
     paintDot(num);
 }
 
 //changing silde/image when click on dots
-function changeImg(num){
+const changeImg = function(num) {
     heroSection.classList = `hero hero${num}`;
-    paintDot(num);    
+    paintDot(num);     
 }
 
 //painting current dot
@@ -52,17 +52,30 @@ function paintDot(num){
     }
 }
 
+//painting first dot when website starts
+paintDot(num);
+
+//init Interval of slides/images
+const initChangeImgAuto = function() { 
+    clearInterval(changeImgAuto);
+    changeImgAuto = setInterval(changeImgToRight, 5000);
+};
+
+//clear Interval of slides/images
+const stopChangeImgAuto = function() {
+    clearInterval(changeImgAuto);
+};
+
+//init interval when website starts
+initChangeImgAuto();
+
+
 arrowNext.addEventListener("click", changeImgToRight);
 arrowPrev.addEventListener("click", changeImgToLeft);
-
-
-
-
-
-
-
-
-
-
+arrowNext.addEventListener("mouseover", stopChangeImgAuto);
+arrowPrev.addEventListener("mouseover", stopChangeImgAuto);
+dot1.addEventListener("mouseover", stopChangeImgAuto);
+dot2.addEventListener("mouseover", stopChangeImgAuto);
+dot3.addEventListener("mouseover", stopChangeImgAuto);
 
 
