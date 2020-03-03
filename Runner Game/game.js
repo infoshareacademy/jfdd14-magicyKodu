@@ -6,6 +6,8 @@ const btn = document.querySelector("button");
 const result = document.querySelector(".score");
 
 
+function startGame() {
+
 //----------General Class Properties----------
 class Properties{
     constructor(x, y, width, height, color){
@@ -61,28 +63,32 @@ class Runner extends Properties {
         super(x, y);
     }
 
-    move = () => { 
-
-        this.y -= this.speed;
-     
-        if (this.y < 250) {
-            this.speed = -(this.speed);   
-        }
-        if (this.y > 390) {
-            this.speed = 0;    
-        }    
-
-    }
-    
-    jump = () => {
-        if (this.canJump){
-            this.speed = scale;
+    move = () => {  
+        if (controller.up && this.canJump == false) {
+            this.speed -= 40;
+            this.canJump = true;
         }   
+        this.speed += 1.5; // gravity
+        this.y += this.speed;
+        this.speed *= 0.9; // friction
+        // if runner is falling below floor line
+        if (this.y > 400) {
+            this.canJump = false;
+            this.y = 400;
+            this.speed = 0;
+        }
     }
-
 }
 
 const runner = new Runner(100, 400);
+
+controller = {
+    up:false,
+    keyListener: function(ev) {
+        const keyState = (ev.type == "keydown") ? true : false;
+        controller.up = keyState;     
+    } 
+  };
 
 //----------Object floor----------
 const floor = new Properties(0, 500, 1300, 100, "brown");
@@ -140,11 +146,11 @@ newBananas();
 newStones();
   
 function setUp() { 
-    
     ctx.clearRect(0, 0, canvas.width, canvas.height);       
     floor.print();
     runner.print();
-    runner.move();  
+    runner.move();
+  
     bananas.forEach(el => {
         el.print();
         el.move();                 
@@ -154,19 +160,23 @@ function setUp() {
         el.move();
     }); 
     bananaScore();         
-
     window.requestAnimationFrame(setUp);
 }
 
 
 
-window.addEventListener("keydown", e => {
-    if (e.code === "ArrowUp") {
-        runner.jump(); 
-        runner.move();
-    }
-})
+// window.addEventListener("keydown", e => {
+//     if (e.code === "ArrowUp") {
+//         runner.jump(); 
+//         runner.move();
+//     }
+// })
 
-// btn.addEventListener("click", setUp);
 
+window.addEventListener("keydown", controller.keyListener)
+window.addEventListener("keyup", controller.keyListener);
 window.requestAnimationFrame(setUp);
+
+}
+
+btn.addEventListener("click", startGame);
