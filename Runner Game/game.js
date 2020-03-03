@@ -4,6 +4,7 @@ const scale = 10;
 const columns = canvas.width / scale;
 const btn = document.querySelector("button");
 const result = document.querySelector(".score");
+let gameOver = false;
 
 
 function startGame() {
@@ -34,7 +35,6 @@ class Banana extends Properties{
     move = () => {
         this.x -= scale;
     }
-
 }
 
 //----------Class Stone----------
@@ -48,7 +48,6 @@ class Stone extends Properties{
     move = () => {
         this.x -= scale;
     }
-
 }
 
 //----------Class Runner----------
@@ -88,7 +87,7 @@ controller = {
         const keyState = (ev.type == "keydown") ? true : false;
         controller.up = keyState;     
     } 
-  };
+};
 
 //----------Object floor----------
 const floor = new Properties(0, 500, 1300, 100, "brown");
@@ -138,6 +137,14 @@ function catchBanana(el){
     } 
 }
 
+function collisionWithStone(el){
+    if (el.x <= runner.x + runner.width && el.x + el.width >= runner.x // check x from both sides
+        && el. y <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
+        gameOver = true;
+        // console.log(game_over);
+        }
+}
+
 newBananas(); 
 newStones();
   
@@ -154,7 +161,11 @@ function setUp() {
     stones.forEach( el => {
         el.print();
         el.move();
-    });         
+        collisionWithStone(el);
+    }); 
+    if (gameOver == true) {
+        return;
+    }        
     window.requestAnimationFrame(setUp);
 }
 
