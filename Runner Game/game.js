@@ -126,21 +126,19 @@ function newStones() {
 }
 
 
+// function addScore() {
+//     runner.score += 1;
+//     result.innerHTML = runner.score;
+// }
 
-
-function addScore() {
-    runner.score += 1;
-    result.innerHTML = runner.score;
-}
-
-function bananaScore() {
-	bananas.forEach(el =>check(el));
-}
+// function bananaScore() {
+// 	bananas.forEach(el =>check(el));
+// }
   
 
-function check(el){
+// function check(el){
 
-}
+// }
 
 newBananas(); 
 newStones();
@@ -159,11 +157,21 @@ function setUp() {
         el.print();
         el.move();
     }); 
-    bananaScore();         
+    // bananaScore();         
     window.requestAnimationFrame(setUp);
 }
 
 
+window.addEventListener("keydown", controller.keyListener)
+window.addEventListener("keyup", controller.keyListener);
+window.requestAnimationFrame(setUp);
+}
+
+btn.addEventListener("click", startGame);
+
+
+
+//-------------OLD VERSION-------------
 
 // window.addEventListener("keydown", e => {
 //     if (e.code === "ArrowUp") {
@@ -171,12 +179,3 @@ function setUp() {
 //         runner.move();
 //     }
 // })
-
-
-window.addEventListener("keydown", controller.keyListener)
-window.addEventListener("keyup", controller.keyListener);
-window.requestAnimationFrame(setUp);
-
-}
-
-btn.addEventListener("click", startGame);
