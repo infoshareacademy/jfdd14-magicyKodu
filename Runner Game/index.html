@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAME - RUNNER</title>
     <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Runner Game</h1>
-        <button>START</button>
-        <button>RESTART</button>
-        <span class="score"></span>
+        <img src="game-img/banana.svg" id="banana" width="10" height="30" style="display:none;">
+        <img src="game-img/stone.svg" id="stone" width="80" height="50" style="display:none;">
+        <img src="game-img/runner.svg" id="runner" width="20" height="100" style="display:none;">
+        <img src="game-img/bird.svg" id="bird" width="50" height="50" style="display:none;">
+        <h2>Runner Game</h2>
+        <div class="userPanel">
+            <div class="userPanel__buttons">
+                <button class="userPanel__buttons__btnStart">Start</button>
+                <button class="userPanel__buttons__btnRestart">Restart</button>
+                <button class="userPanel__buttons__btnInstruction">Instrukcja</button>
+            </div>
+            <div class="userPanel__points">
+                <div class="userPanel__points__score">0</div>
+                <p>Punkty</p>
+            </div>
+        </div>     
     </header>
 
     <main>
@@ -19,8 +32,10 @@
         class="canvas" 
         width="1200px" 
         height="600px"
-        style="background-color: lightblue; border: 5px solid blue;">
+        style="background-image: url('/game-img/landfit.svg');">
         </canvas>
+
+        <div class="gameInstruction">Lorem ipsum dolor </br>sit amet consectetur </br>adipisicing elit. </br>Eveniet eum, aut voluptatem </br>quasi vel quod in sed sunt incidunt</br> excepturi iste natus, possimus</br> reiciendis unde perspiciatis, cum quam inventore delectus.</div>
     </main>
 
     <footer>
