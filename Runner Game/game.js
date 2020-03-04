@@ -15,6 +15,11 @@ let bananaRandomMax = 5;
 let stoneRandomMin = 1;
 let stoneRandomMax = 5;
 
+//----------Speed change----------
+const bananaSpeedRatio = 0.001; // speed up ratio
+const stoneSpeedRatio = 0.001; // speed up ratio
+const ratio = 0.0001 // banana/stone frequency increment
+
 function startGame() {
 //----------General Class Properties----------
 class Properties {
@@ -156,6 +161,15 @@ function collisionWithStone(el){
         }
 }
 
+function speedUp(){
+    bananaSpeed += bananaSpeedRatio;
+    stoneSpeed += stoneSpeedRatio;
+    bananaRandomMin -= ratio;
+    bananaRandomMax -= ratio;
+    stoneRandomMin -= ratio;
+    stoneRandomMax -= ratio;
+}
+
 newBananas(); 
 newStones();
   
@@ -174,6 +188,7 @@ function setUp() {
         el.move(stoneSpeed);
         collisionWithStone(el);
     }); 
+    speedUp();
     if (gameOver == true) {
         return;
     }        
