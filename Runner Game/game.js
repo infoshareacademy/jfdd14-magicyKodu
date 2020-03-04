@@ -40,8 +40,8 @@ class Banana extends Properties {
     color = "yellow";
     bananaHit = false; 
 
-    move = () => {
-        this.x -= scale;
+    move = (speed) => {
+        this.x -= speed;
     }
 }
 
@@ -53,8 +53,8 @@ class Stone extends Properties {
     height = 50;
     color= "gray";
 
-    move = () => {
-        this.x -= scale;
+    move = (speed) => {
+        this.x -= speed;
     }
 }
 
@@ -166,12 +166,12 @@ function setUp() {
     runner.move();
     bananas.forEach(el => {
         el.print();
-        el.move(); 
+        el.move(bananaSpeed); 
         catchBanana(el);                
     });     
     stones.forEach( el => {
         el.print();
-        el.move();
+        el.move(stoneSpeed);
         collisionWithStone(el);
     }); 
     if (gameOver == true) {
