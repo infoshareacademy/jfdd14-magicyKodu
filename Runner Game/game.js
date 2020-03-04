@@ -12,11 +12,12 @@ let bananaSpeed = 6;
 let stoneSpeed = 6;
 let bananaRandomMin = 1;
 let bananaRandomMax = 5;
-
+let stoneRandomMin = 1;
+let stoneRandomMax = 5;
 
 function startGame() {
 //----------General Class Properties----------
-class Properties{
+class Properties {
     constructor(x, y, width, height, color){
         this.x = x;
         this.y = y;
@@ -31,7 +32,7 @@ class Properties{
 }
 
 //----------Class Banana----------
-class Banana extends Properties{
+class Banana extends Properties {
     x = 1200;
     y = 300;
     width = 10;
@@ -45,7 +46,7 @@ class Banana extends Properties{
 }
 
 //----------Class Stone----------
-class Stone extends Properties{
+class Stone extends Properties {
     x = 1200;
     y = 450;
     width = 50;
@@ -104,6 +105,7 @@ const floor = new Properties(0, 500, 1300, 100, "brown");
 let bananas = [];
 let stones = [];
 
+//----------Random value----------
 function getRandomInt(min, max) {
     // min = Math.ceil(min);
     // max = Math.floor(max);
@@ -123,9 +125,9 @@ function newBananas() {
 }
 
 function newStones() {
-    let rand = getRandomInt(0,10);
+    let rand = getRandomInt(stoneRandomMin, stoneRandomMax);
     stones.push(new Stone());
-    if (stones.length === 10) {
+    if (stones.length === 5) {
         stones.shift();
     }
     setTimeout(newStones, rand * 1000);
