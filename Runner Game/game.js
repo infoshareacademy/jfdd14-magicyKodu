@@ -1,3 +1,4 @@
+//----------Canvas generator----------
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d"); 
 const scale = 10;
@@ -6,9 +7,14 @@ const btn = document.querySelector("button");
 const result = document.querySelector(".score");
 let gameOver = false;
 
+//----------Configuration speed----------
+let bananaSpeed = 6;
+let stoneSpeed = 6;
+let bananaRandomMin = 1;
+let bananaRandomMax = 5;
+
 
 function startGame() {
-
 //----------General Class Properties----------
 class Properties{
     constructor(x, y, width, height, color){
@@ -30,7 +36,8 @@ class Banana extends Properties{
     y = 300;
     width = 10;
     height = 30;
-    color = "yellow"; 
+    color = "yellow";
+    bananaHit = false; 
 
     move = () => {
         this.x -= scale;
@@ -98,16 +105,18 @@ let bananas = [];
 let stones = [];
 
 function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    // min = Math.ceil(min);
+    // max = Math.floor(max);
+    console.log(min);
+    console.log(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function newBananas() {
-    let rand = getRandomInt(0,20);
+    let rand = getRandomInt(bananaRandomMin, bananaRandomMax);
     bananas.push(new Banana());  
     console.log(bananas);   
-    if (bananas.length === 10) {
+    if (bananas.length === 5) {
         bananas.shift();
     }
     setTimeout(newBananas, rand * 1000);
