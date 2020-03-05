@@ -253,11 +253,3 @@ btn.addEventListener("click", startGame);
 btnInstruction.addEventListener("click", showInstruction);
 
 
-//-------------OLD VERSION-------------
-
-// window.addEventListener("keydown", e => {
-//     if (e.code === "ArrowUp") {
-//         runner.jump(); 
-//         runner.move();
-//     }
-// })
