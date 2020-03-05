@@ -5,7 +5,8 @@ const scale = 10;
 const columns = canvas.width / scale;
 const btn = document.querySelector(".userPanel__buttons__btnStart");
 const btnInstruction = document.querySelector(".userPanel__buttons__btnInstruction");
-const result = document.querySelector(".userPanel__points__score");
+const result = document.querySelector("#current");
+let resultMax = document.querySelector("#max");
 const instruction = document.querySelector(".gameInstruction");
 const imgBanana = document.getElementById("banana");
 const imgStone = document.getElementById("stone");
@@ -134,10 +135,6 @@ let birds = [];
 
 //----------Random value----------
 function getRandomInt(min, max) {
-    // min = Math.ceil(min);
-    // max = Math.floor(max);
-    console.log(min);
-    console.log(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -176,11 +173,9 @@ function catchBanana(el){
         runner.score += 1;
         result.innerHTML = runner.score;
         el.bananaHit = true;
-        // https://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property
         let removeIndex = bananas.map(function(el) { 
             return el.bananaHit; 
         }).indexOf(true);
-        // remove object
         bananas.splice(removeIndex, 1);
     } 
 }
@@ -189,8 +184,8 @@ function collisionWithStone(el){
     if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x // check x from both sides
         && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
         gameOver = true;
-        // console.log(game_over);
         }
+    storeScore(runner.score);
 }
 
 function speedUp(){
@@ -237,6 +232,23 @@ function setUp() {
 window.addEventListener("keydown", controller.keyListener)
 window.addEventListener("keyup", controller.keyListener);
 window.requestAnimationFrame(setUp);
+}
+
+//----------Save to localStorage----------
+function storeScore(addScore) {
+    if (localStorage.getItem("savedScore") === null){
+        localStorage.savedScore = JSON.stringify(addScore);
+    } else {
+        let retrievedScore = JSON.parse(localStorage.savedScore);
+        if (retrievedScore >= addScore ) {
+            maxScore = retrievedScore;
+        }
+        else {
+            maxScore = addScore;
+            localStorage.savedScore = JSON.stringify(addScore);
+        }
+        resultMax.innerHTML = maxScore;
+    }
 }
 
 //----------Instruction option----------
