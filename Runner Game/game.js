@@ -91,7 +91,6 @@ function startGame() {
             this.speed += 1.5; // gravity
             this.y += this.speed;
             this.speed *= 0.9; // friction
-            // if runner is falling below floor line
             if (this.y > 320) {
                 this.canJump = false;
                 this.y = 320;
@@ -162,8 +161,7 @@ function startGame() {
 
 
     function catchBanana(el){
-        if (el.x <= runner.x + runner.width && el.x + el.width >= runner.x // check x from both sides
-            && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
+        if (el.x <= runner.x + runner.width && el.x + el.width >= runner.x && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
             runner.score += 1;
             result.innerHTML = runner.score;
             el.bananaHit = true;
@@ -173,10 +171,9 @@ function startGame() {
     }
 
     function collisionWithStone(el){
-        if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x // check x from both sides
-            && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
+        if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
             gameOver = true;
-            }
+        }
         storeScore(runner.score);
     }
 
@@ -211,8 +208,7 @@ function startGame() {
         birds.forEach(el => {
             el.print();
             el.move(bananaSpeed);                
-        }); 
-        
+        });    
         speedUp();
         if (gameOver == true) {
             return;
