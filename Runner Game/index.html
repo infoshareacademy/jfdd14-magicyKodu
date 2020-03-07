@@ -17,12 +17,12 @@
         <div class="userPanel">
             <div class="userPanel__buttons">
                 <button class="userPanel__buttons__btnStart">Start</button>
-                <button class="userPanel__buttons__btnRestart">Restart</button>
                 <button class="userPanel__buttons__btnInstruction">Instrukcja</button>
             </div>
             <div class="userPanel__points">
-                <div class="userPanel__points__score">0</div>
                 <p>Punkty</p>
+                <div class="userPanel__points__score" id="current">0</div>
+                <div class="userPanel__points__score" id="max">0</div>         
             </div>
         </div>     
     </header>
@@ -34,8 +34,9 @@
         height="600px"
         style="background-image: url('/Runner Game/game-img/landfit.svg');">
         </canvas>
-
+        <p class="gameOverTxt">Koniec gry</p>
         <div class="gameInstruction">Lorem ipsum dolor </br>sit amet consectetur </br>adipisicing elit. </br>Eveniet eum, aut voluptatem </br>quasi vel quod in sed sunt incidunt</br> excepturi iste natus, possimus</br> reiciendis unde perspiciatis, cum quam inventore delectus.</div>
+        
     </main>
 
     <footer>
