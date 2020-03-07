@@ -105,9 +105,10 @@ function startGame() {
         up:false,
         keyListener: function(ev) {
             const keyState = (ev.type == "keydown") ? true : false;
-            controller.up = keyState;     
+            if(ev.keyCode == 38)
+                controller.up = keyState;     
         } 
-    };
+    }
 
     //----------Object Bird----------
     class Bird extends Properties {
