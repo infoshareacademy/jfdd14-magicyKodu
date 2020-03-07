@@ -21,8 +21,7 @@ body{
     font-size: 20px;
     text-align: center;
     background-color: var(--forthColor);
-    color: var(--thirdColor);    
-    
+    color: var(--thirdColor);      
 }
 
 h2{
@@ -117,9 +116,9 @@ main{
 }
 
 .gameInstruction{
-    padding: 50px;
+    padding: 20px 50px 30px;
     position: absolute;
-    top: 30%; 
+    top: 33%; 
     font-weight: bold;
     line-height: 36px; 
     color: var(--forthColor);
@@ -128,11 +127,18 @@ main{
     text-align: justify;
     border-radius: 20px;
     z-index: 5;
+    box-shadow: 1px 1px 15px 1px var(--sixthColor);
+}
+
+h3{
+    padding: 20px;
+    text-align: center;
 }
 
 i{
-    padding: 5px 15px;
+    padding: 5px 15px 5px 10px;
     background-color: var(--sixthColor); 
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px var(--sixthColor);
 }
 
