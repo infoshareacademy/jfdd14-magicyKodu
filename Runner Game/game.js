@@ -1,8 +1,6 @@
 //----------Canvas generator----------
 const canvas = document.getElementsByClassName("canvas")[0];
 const ctx = canvas.getContext("2d"); 
-const scale = 10;
-const columns = canvas.width / scale;
 const btn = document.querySelector(".userPanel__buttons__btnStart");
 const btnInstruction = document.querySelector(".userPanel__buttons__btnInstruction");
 const result = document.querySelector("#current");
@@ -12,7 +10,7 @@ const imgBanana = document.getElementById("banana");
 const imgStone = document.getElementById("stone");
 const imgRunner = document.getElementById("runner"); 
 const imgBird = document.getElementById("bird"); 
-const gameOver = false;
+let gameOver = false;
 
 //----------Configuration speed----------
 let bananaSpeed = 9;
@@ -173,6 +171,7 @@ function startGame() {
     function collisionWithStone(el){
         if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
             gameOver = true;
+            
         }
         storeScore(runner.score);
     }
@@ -192,6 +191,7 @@ function startGame() {
     hideInstruction();
     
     function setUp() { 
+        gameOver = false;
         ctx.clearRect(0, 0, canvas.width, canvas.height);       
         runner.print();
         runner.move();
@@ -210,10 +210,10 @@ function startGame() {
             el.move(bananaSpeed);                
         });    
         speedUp();
-        if (gameOver == true) {
-            return;
+        if (!gameOver) {
+            window.requestAnimationFrame(setUp);
         }        
-        window.requestAnimationFrame(setUp);
+        
 }
 
 
