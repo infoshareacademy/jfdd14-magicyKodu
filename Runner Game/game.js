@@ -6,26 +6,29 @@ const btnInstruction = document.querySelector(".userPanel__buttons__btnInstructi
 const result = document.querySelector("#current");
 let resultMax = document.querySelector("#max");
 const instruction = document.querySelector(".gameInstruction");
+const gameOverTxt = document.querySelector(".gameOverTxt");
 const imgBanana = document.getElementById("banana");
 const imgStone = document.getElementById("stone");
 const imgRunner = document.getElementById("runner"); 
-const imgBird = document.getElementById("bird"); 
+const imgDrink = document.getElementById("drink"); 
 let gameOver = false;
-const gameOverTxt = document.querySelector(".gameOverTxt");
- 
 
 //----------Configuration speed----------
 let bananaSpeed = 9;
 let stoneSpeed = 9;
+let drinkSpeed = 9;
 let bananaRandomMin = 1;
 let bananaRandomMax = 5;
 let stoneRandomMin = 1;
 let stoneRandomMax = 5;
+let drinkRandomMin = 1;
+let drinkRandomMax = 10;
 
 
 //----------Speed change----------
 const bananaSpeedRatio = 0.001; // speed up ratio
-const stoneSpeedRatio = 0.001; // speed up ratio
+const stoneSpeedRatio = 0.001;
+const drinkSpeedRatio = 0.0012; // speed up ratio
 const ratio = 0.0001 // banana/stone frequency increment
 
 function startGame() {
@@ -47,7 +50,7 @@ function startGame() {
     //----------Class Banana----------
     class Banana extends Properties {
         x = 1200;
-        y = 220;
+        y = getRandomInt(150, 250);
         width = 30*2.2;
         height = 30*2.2;
         bananaHit = false; 
@@ -111,13 +114,14 @@ function startGame() {
     }
 
     //----------Object Bird----------
-    class Bird extends Properties {
+    class Drink extends Properties {
         x = 1200;
-        y = 10;
-        width = 160*0.5;
-        height = 50*0.5;
+        y = 300;
+        width = 140*0.3;
+        height = 300*0.3;
         color= "black";
-        img = imgBird;
+        drinkHit = false;
+        img = imgDrink;
 
         move = (speed) => {
             this.x -= speed;
@@ -126,7 +130,7 @@ function startGame() {
 
     let bananas = [];
     let stones = [];
-    let birds = [];
+    let drinks = [];
 
     //----------Random value----------
     function getRandomInt(min, max) {
@@ -151,13 +155,13 @@ function startGame() {
         setTimeout(newStones, rand * 1000);
     } 
 
-    function newBirds() {
-        let rand = getRandomInt(bananaRandomMin, bananaRandomMax*10);
-        birds.push(new Bird());     
-        if (birds.length === 5) {
-            birds.shift();
+    function newDrinks() {
+        let rand = getRandomInt(drinkRandomMin, drinkRandomMax);
+        drinks.push(new Drink());     
+        if (drinks.length === 5) {
+            drinks.shift();
         }
-        setTimeout(newBirds, rand * 1000);
+        setTimeout(newDrinks, rand * 3000);
     }
 
 
@@ -180,20 +184,32 @@ function startGame() {
         storeScore(runner.score);
     }
 
+    function catchDrink(el){
+        if (el.x + 10 <= runner.x + runner.width && el.x + el.width >= runner.x && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
+            runner.score += 3;
+            result.innerHTML = runner.score;
+            el.drinkHit = true;
+            let removeIndex = drinks.map(el => el.drinkHit).indexOf(true);
+            drinks.splice(removeIndex, 1);
+        } 
+    }
+
     function speedUp(){
         bananaSpeed += bananaSpeedRatio;
         stoneSpeed += stoneSpeedRatio;
+        drinkSpeed += drinkSpeedRatio;
         bananaRandomMin -= ratio;
         bananaRandomMax -= ratio;
         stoneRandomMin -= ratio;
         stoneRandomMax -= ratio;
+        drinkRandomMin -= ratio;
+        drinkRandomMax -= ratio;
     }
 
     newBananas(); 
     newStones();
-    newBirds();
+    newDrinks();
     hideInstruction();
-    
     
     function setUp() { 
         if (result.innerHTML > 0 && gameOver == true){
@@ -216,17 +232,16 @@ function startGame() {
             el.move(stoneSpeed);
             collisionWithStone(el);
         }); 
-        birds.forEach(el => {
+        drinks.forEach(el => {
             el.print();
-            el.move(bananaSpeed);                
+            el.move(bananaSpeed); 
+            catchDrink(el);                
         });    
         speedUp();
         if (gameOver == false) {
             window.requestAnimationFrame(setUp);
-        }        
-        
+        }            
 }
-
 
 window.addEventListener("keydown", controller.keyListener)
 window.addEventListener("keyup", controller.keyListener);
