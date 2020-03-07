@@ -11,6 +11,8 @@ const imgStone = document.getElementById("stone");
 const imgRunner = document.getElementById("runner"); 
 const imgBird = document.getElementById("bird"); 
 let gameOver = false;
+const gameOverTxt = document.querySelector(".gameOverTxt");
+ 
 
 //----------Configuration speed----------
 let bananaSpeed = 9;
@@ -170,8 +172,9 @@ function startGame() {
 
     function collisionWithStone(el){
         if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
-            gameOver = true;
-            
+            gameOver = true; 
+            canvas.classList.add("gameOver");   
+            gameOverTxt.classList.add("show"); 
         }
         storeScore(runner.score);
     }
@@ -190,7 +193,14 @@ function startGame() {
     newBirds();
     hideInstruction();
     
+    
     function setUp() { 
+        if (result.innerHTML > 0 && gameOver == true){
+            result.innerHTML = 0;     
+        }
+        canvas.classList.remove("gameOver");
+        gameOverTxt.classList.remove("show"); 
+        gameOverTxt.classList.add("hide"); 
         gameOver = false;
         ctx.clearRect(0, 0, canvas.width, canvas.height);       
         runner.print();
@@ -210,7 +220,7 @@ function startGame() {
             el.move(bananaSpeed);                
         });    
         speedUp();
-        if (!gameOver) {
+        if (gameOver == false) {
             window.requestAnimationFrame(setUp);
         }        
         
@@ -246,18 +256,9 @@ function hideInstruction() {
 
 function showInstruction() {
     instruction.classList.remove("hide");
-    instruction.classList.add("active");
+    instruction.classList.add("active");       
 }
 
 btn.addEventListener("click", startGame);
 btnInstruction.addEventListener("click", showInstruction);
 
-
-//-------------OLD VERSION-------------
-
-// window.addEventListener("keydown", e => {
-//     if (e.code === "ArrowUp") {
-//         runner.jump(); 
-//         runner.move();
-//     }
-// })
