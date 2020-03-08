@@ -15,26 +15,23 @@ const imgRunner2 = document.getElementById("runner2");
 const imgDrink = document.getElementById("drink"); 
 const imgLand1 = document.getElementById("land1");
 const imgLand2 = document.getElementById("land2");
+const banana = new Audio('sound-mp3/banana.mp3');
+const stone = new Audio('sound-mp3/stone.mp3');
+const drink = new Audio('sound-mp3/drink.mp3');
 let gameOver = false;
 
 //----------Configuration speed----------
-let bananaSpeed = 9;
-let stoneSpeed = 9;
-let drinkSpeed = 9;
-let landSpeed = 9;
-let bananaRandomMin = 1;
-let bananaRandomMax = 5;
-let stoneRandomMin = 1;
-let stoneRandomMax = 5;
-let drinkRandomMin = 1;
-let drinkRandomMax = 10;
-
+let generalSpeed = 9;
+let bananaRandomMin = 10;
+let bananaRandomMax = 50;
+let stoneRandomMin = 10;
+let stoneRandomMax = 50;
+let drinkRandomMin = 10;
+let drinkRandomMax = 50;
 
 //----------Speed change----------
-const bananaSpeedRatio = 0.001; // speed up ratio
-const stoneSpeedRatio = 0.001;
-const drinkSpeedRatio = 0.0012; // speed up ratio
-const ratio = 0.0001 // banana/stone frequency increment
+const generalSpeedRatio = 0.003; // speed up ratio
+const ratio = 0.00167 // frequency increment
 
 function startGame() {
 //----------General Class Properties----------
@@ -69,13 +66,58 @@ function startGame() {
     //----------Class Stone----------
     class Stone extends Properties {
         x = 1200;
-        y = 455;
+        y = 445;
         width = 40*2.5;
         height = 30*2.5;
         img = imgStone;
 
         move = (speed) => {
             this.x -= speed;
+        }
+    }
+
+    //----------Class Drink----------
+    class Drink extends Properties {
+        x = 1200;
+        y = 300;
+        width = 140*0.3;
+        height = 300*0.3;
+        color= "black";
+        drinkHit = false;
+        img = imgDrink;
+
+        move = (speed) => {
+            this.x -= speed;
+        }
+    }
+
+    //----------Class Landscape1----------
+    class Landscape1 extends Properties {
+        x = 0;
+        y = 0;
+        width = 1800;
+        height = 600;
+        img = imgLand1;
+    
+        move = (speed) => {
+            this.x -= speed;
+                if (this.x <= -this.width) this.x = 1800;
+        }
+    }
+
+    const land1 = new Landscape1();
+
+    //----------Class Landscape2----------
+    class Landscape2 extends Properties {
+        x = 1800;
+        y = 0;
+        width = 1800;
+        height = 600;
+        img = imgLand2;
+    
+        move = (speed) => {
+            this.x -= speed;
+                if (this.x <= -this.width) this.x = 1800;
         }
     }
 
@@ -111,15 +153,15 @@ function startGame() {
             if(this.canJump == false){
                 this.frameCheck++;
             }
-            if (this.y > 320) {
+            if (this.y > 310) {
                 this.canJump = false;
-                this.y = 320;
+                this.y = 310;
                 this.speed = 0;
             }
         }
     }
 
-    const runner = new Runner(100, 320);
+    const runner = new Runner(100, 310);
 
     controller = {
         up:false,
@@ -128,51 +170,6 @@ function startGame() {
             if(ev.keyCode == 38)
                 controller.up = keyState;     
         } 
-    }
-
-    //----------Object Drink----------
-    class Drink extends Properties {
-        x = 1200;
-        y = 300;
-        width = 140*0.3;
-        height = 300*0.3;
-        color= "black";
-        drinkHit = false;
-        img = imgDrink;
-
-        move = (speed) => {
-            this.x -= speed;
-        }
-    }
-
-    //----------Object Landscape1----------
-    class Landscape1 extends Properties {
-        x = 0;
-        y = 0;
-        width = 1800;
-        height = 600;
-        img = imgLand1;
-    
-        move = (speed) => {
-            this.x -= speed;
-                if (this.x <= -this.width) this.x = 1800;
-        }
-    }
-
-    const land1 = new Landscape1();
-
-    //----------Object Landscape2----------
-    class Landscape2 extends Properties {
-        x = 1800;
-        y = 0;
-        width = 1800;
-        height = 600;
-        img = imgLand2;
-    
-        move = (speed) => {
-            this.x -= speed;
-                if (this.x <= -this.width) this.x = 1800;
-        }
     }
 
     const land2 = new Landscape2();
@@ -192,7 +189,7 @@ function startGame() {
         if (bananas.length === 5) {
             bananas.shift();
         }
-        setTimeout(newBananas, rand * 1000);
+        setTimeout(newBananas, rand * 100);
     }
 
     function newStones() {
@@ -201,7 +198,7 @@ function startGame() {
         if (stones.length === 5) {
             stones.shift();
         }
-        setTimeout(newStones, rand * 1000);
+        setTimeout(newStones, rand * 100);
     } 
 
     function newDrinks() {
@@ -210,14 +207,14 @@ function startGame() {
         if (drinks.length === 5) {
             drinks.shift();
         }
-        setTimeout(newDrinks, rand * 3000);
+        setTimeout(newDrinks, rand * 400);
     }
-
 
     function catchBanana(el){
         if (el.x <= runner.x + runner.width && el.x + el.width >= runner.x && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
             runner.score += 1;
             result.innerHTML = runner.score;
+            banana.play();
             el.bananaHit = true;
             let removeIndex = bananas.map(el => el.bananaHit).indexOf(true);
             bananas.splice(removeIndex, 1);
@@ -227,6 +224,7 @@ function startGame() {
     function collisionWithStone(el){
         if (el.x + 20 <= runner.x + runner.width && el.x + el.width - 20 >= runner.x && el. y + 40 <= runner.y + runner.height){ // check y just from above. You can`t jump below stone. If You would decide to do so, You would have to add another check
             gameOver = true; 
+            stone.play();
             canvas.classList.add("gameOver");   
             gameOverTxt.classList.add("show"); 
         }
@@ -237,6 +235,7 @@ function startGame() {
         if (el.x + 10 <= runner.x + runner.width && el.x + el.width >= runner.x && runner.y <= el.y + el.height){ // check y just from below. You can`t jump above banana. If You would decide to do so, You would have to add another check
             runner.score += 3;
             result.innerHTML = runner.score;
+            drink.play();
             el.drinkHit = true;
             let removeIndex = drinks.map(el => el.drinkHit).indexOf(true);
             drinks.splice(removeIndex, 1);
@@ -244,9 +243,7 @@ function startGame() {
     }
 
     function speedUp(){
-        bananaSpeed += bananaSpeedRatio;
-        stoneSpeed += stoneSpeedRatio;
-        drinkSpeed += drinkSpeedRatio;
+        generalSpeed += generalSpeedRatio;
         bananaRandomMin -= ratio;
         bananaRandomMax -= ratio;
         stoneRandomMin -= ratio;
@@ -262,7 +259,8 @@ function startGame() {
     
     function setUp() { 
         if (result.innerHTML > 0 && gameOver == true){
-            result.innerHTML = 0;     
+            result.innerHTML = 0; 
+            generalSpeed = 9;    
         }
         canvas.classList.remove("gameOver");
         gameOverTxt.classList.remove("show"); 
@@ -270,24 +268,24 @@ function startGame() {
         gameOver = false;
         ctx.clearRect(0, 0, canvas.width, canvas.height); 
         land1.print();
-        land1.move(landSpeed); 
+        land1.move(9); 
         land2.print();
-        land2.move(landSpeed);      
+        land2.move(9);      
         runner.print();
         runner.move();
         bananas.forEach(el => {
             el.print();
-            el.move(bananaSpeed); 
+            el.move(generalSpeed); 
             catchBanana(el);                
         });     
         stones.forEach( el => {
             el.print();
-            el.move(stoneSpeed);
+            el.move(generalSpeed);
             collisionWithStone(el);
         }); 
         drinks.forEach(el => {
             el.print();
-            el.move(bananaSpeed); 
+            el.move(generalSpeed); 
             catchDrink(el);                
         });    
         speedUp();
@@ -296,7 +294,7 @@ function startGame() {
         }            
 }
 
-window.addEventListener("keydown", controller.keyListener)
+window.addEventListener("keydown", controller.keyListener);
 window.addEventListener("keyup", controller.keyListener);
 window.requestAnimationFrame(setUp);
 }
@@ -307,7 +305,7 @@ function storeScore(addScore) {
         localStorage.savedScore = JSON.stringify(addScore);
     } else {
         let retrievedScore = JSON.parse(localStorage.savedScore);
-        if (retrievedScore >= addScore ) {
+        if (retrievedScore >= addScore) {
             maxScore = retrievedScore;
         }
         else {
