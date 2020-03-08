@@ -14,7 +14,7 @@ function showGameAfterEmail(event) {
         alert("Niepoprawny adres email!")
     } else {
         localStorage.setItem("email", inputValue);
-        window.open("./game.html");
+        window.open("../Runner Game/game.html");
     } 
 }
 
