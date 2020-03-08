@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME - RUNNER</title>
+    <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+<body>
+    <header>
+        <img src="game-img/banana.svg" id="banana" style="display:none;">
+        <img src="game-img/stone.svg" id="stone" style="display:none;">
+        <img src="game-img/runner_0.svg" id="runner0" style="display:none;">
+        <img src="game-img/runner_1.svg" id="runner1" style="display:none;">
+        <img src="game-img/runner_2.svg" id="runner2" style="display:none;">
+        <img src="game-img/drink.svg" id="drink" style="display:none;">
+        <img src="game-img/land_1.svg" id="land1" style="display:none;">
+        <img src="game-img/land_2.svg" id="land2" style="display:none;">
+        <h2>Runner Game</h2>
+        <hr>
+        <div class="userPanel">
+            <div class="userPanel__buttons">
+                <button class="userPanel__buttons__btnStart">Start</button>
+                <button class="userPanel__buttons__btnInstruction userPanel__buttons__btnInstruction--modifier">Instrukcja</button>
+            </div>
+            <div class="userPanel__points">
+                <p class="userPanel__points__display">Punkty</p>
+                <div class="userPanel__points__score" id="current">0</div>
+                <p class="userPanel__points__display">Najlepszy wynik</p>
+                <div class="userPanel__points__score" id="max">0</div>         
+            </div>
+        </div>     
+    </header>
+
+    <main>
+        <canvas 
+        class="canvas" 
+        width="1200px" 
+        height="600px"
+        style="background-image: url('./game-img/landfit.svg');">
+        </canvas>
+
+        <p class="gameOverTxt">Koniec gry</p>
+        <div class="gameInstruction">
+            <h3>Instrukcja gry</h3>
+            <p>Wcielasz się w postać zawodowego biegacza, który startuje w długodystansowych zawodach.</br>Twoim zadaniem jest zbierać napotkane banany, które dostarczają energii na dalszy bieg oraz </br> magiczny napój nawadniający organizm.</br>Za każdego banana otrzymujesz 1 pkt, natomiast napój nabija na licznik 3 pkty.</br>Uważaj na pojawiające się kamienie, które musisz przeskoczyć, by uniknąć skręcenia kostki.</br>Skok wykonujesz po naciśnięciu przycisku <i class="fas fa-long-arrow-alt-up"></i>.</br>Gra kończy się w momencie kolizji z kamieniem.</p>   
+        </div>
+        
+    </main>
+
+<!-----------------SCRIPTS----------------->
+    <script src="game.js"></script>
+
+</body>
+</html>
