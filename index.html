@@ -144,8 +144,11 @@
             <div class="containerPremiere">
                 <div id="premiere">
                     <p>Zapisz się na naszą premierę</p>
-                    <input class="text" type="email" name="email" id="email" placeholder="podaj swój adres e-mail" required><br><br>
-                    <input class="text" type="submit" value="Wyślij formularz" required><br><br>
+                    <form class="premiere__form">
+                        <input class="text" id="premiere__form__input" type="email" name="email" id="email" placeholder="Podaj swój adres e-mail" required><br><br>
+                        <input class="text" id="premiere__form__btn" type="submit" value="Wyślij" required><br><br>
+                    </form>
+                    <a href="game.html" class="hiddenLink"></a>
                 </div>    
                 <div class="check">
                     <input class="check" type="checkbox" name="zgoda" value="zgoda" required > Wyrażam zgodę na otrzymanie jednego e-maila z informacją o premierze <br>
@@ -233,6 +236,7 @@
     <script src="js/cookies.js"></script> 
     <script type="text/javascript" src="js/main.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/form.js"></script>
 
 </body>
 

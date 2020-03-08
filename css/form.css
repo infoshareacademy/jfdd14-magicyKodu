@@ -96,7 +96,7 @@ div.check{
     font-family: var(--secondaryFont);
     font-size: 16px;
  }
- div#premiere input.text{
+ div#premiere form input.text{
     margin: auto 0;
     width: 30%;
     min-width: 200px;
@@ -111,10 +111,10 @@ div.check{
     font-weight: bold;
 
 }
-div#premiere input.text:hover{
+div#premiere form input.text:hover{
     background-color: #427c5b;
 }
-div#premiere input#email.text{
+div#premiere form input#premiere__form__input{
     width: 30%;
     min-width: 200px;
     max-width: 400px;
