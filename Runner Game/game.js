@@ -18,6 +18,7 @@ const imgLand2 = document.getElementById("land2");
 const banana = new Audio('sound-mp3/banana.mp3');
 const stone = new Audio('sound-mp3/stone.mp3');
 const drink = new Audio('sound-mp3/drink.mp3');
+const background = new Audio('sound-mp3/background.mp3');
 let gameOver = false;
 
 //----------Configuration speed----------
@@ -34,6 +35,10 @@ const generalSpeedRatio = 0.003; // speed up ratio
 const ratio = 0.00167 // frequency increment
 
 function startGame() {
+
+    background.volume = 0.2;
+    background.loop = true;
+    background.play();
 //----------General Class Properties----------
     class Properties {
         constructor(x, y, width, height, img){
@@ -66,7 +71,7 @@ function startGame() {
     //----------Class Stone----------
     class Stone extends Properties {
         x = 1200;
-        y = 445;
+        y = 465;
         width = 40*2.5;
         height = 30*2.5;
         img = imgStone;
