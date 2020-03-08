@@ -21,6 +21,7 @@ let gameOver = false;
 let bananaSpeed = 9;
 let stoneSpeed = 9;
 let drinkSpeed = 9;
+let landSpeed = 9;
 let bananaRandomMin = 1;
 let bananaRandomMax = 5;
 let stoneRandomMin = 1;
@@ -129,7 +130,7 @@ function startGame() {
         } 
     }
 
-    //----------Object Bird----------
+    //----------Object Drink----------
     class Drink extends Properties {
         x = 1200;
         y = 300;
@@ -143,6 +144,38 @@ function startGame() {
             this.x -= speed;
         }
     }
+
+    //----------Object Landscape1----------
+    class Landscape1 extends Properties {
+        x = 0;
+        y = 0;
+        width = 1800;
+        height = 600;
+        img = imgLand1;
+    
+        move = (speed) => {
+            this.x -= speed;
+                if (this.x <= -this.width) this.x = 1800;
+        }
+    }
+
+    const land1 = new Landscape1();
+
+    //----------Object Landscape2----------
+    class Landscape2 extends Properties {
+        x = 1800;
+        y = 0;
+        width = 1800;
+        height = 600;
+        img = imgLand2;
+    
+        move = (speed) => {
+            this.x -= speed;
+                if (this.x <= -this.width) this.x = 1800;
+        }
+    }
+
+    const land2 = new Landscape2();
 
     let bananas = [];
     let stones = [];
@@ -235,7 +268,11 @@ function startGame() {
         gameOverTxt.classList.remove("show"); 
         gameOverTxt.classList.add("hide"); 
         gameOver = false;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);       
+        ctx.clearRect(0, 0, canvas.width, canvas.height); 
+        land1.print();
+        land1.move(landSpeed); 
+        land2.print();
+        land2.move(landSpeed);      
         runner.print();
         runner.move();
         bananas.forEach(el => {
