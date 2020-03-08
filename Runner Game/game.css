@@ -1,0 +1,144 @@
+/* General styles */
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --fifthColor: #e6e6e6;
+    --sixthColor: #999999;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--secondaryFont);
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--forthColor);
+    color: var(--thirdColor);      
+}
+
+h2{
+    margin: 40px;
+    padding: 0;
+    font-family: var(--primaryFont);
+    font-size: 66px;
+}
+
+.userPanel{
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: auto;
+    font-weight: bold;  
+}
+
+.userPanel__buttons__btnStart{
+    margin-right: 20px;
+}
+
+button{  
+    padding: 0.5em;  
+    font-family: var(--secondaryFont);
+    font-size: 20px;
+    font-weight: bold;   
+    background-color: var(--primaryColor);
+    color: var(--thirdColor);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-image: radial-gradient(var(--secondaryColor), var(--primaryColor)); 
+}
+
+.userPanel__buttons__btnInstruction--modifier{
+    background-color: var(--sixthColor)
+}
+
+.userPanel__buttons__btnInstruction--modifier:hover{
+    background-image: radial-gradient(var(--forthColor), var(--sixthColor)); 
+}
+
+.userPanel__points{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.userPanel__points__display{
+    margin: 0px 30px;
+    height: auto;
+}
+
+.userPanel__points__score{
+    padding: 0.5em;
+    width: 60px;
+    border-radius: 5px;
+    background-color: red;
+}
+
+main{
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.gameOver {
+    opacity: 0.5;
+}
+
+.gameOverTxt{
+    position: absolute;
+    top: 35%; 
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--forthColor);
+    border-radius: 10px;
+}
+
+.gameInstruction{
+    padding: 20px 50px 30px;
+    position: absolute;
+    top: 33%; 
+    font-weight: bold;
+    line-height: 36px; 
+    color: var(--forthColor);
+    background-color: var(--fifthColor);
+    border: 1px solid var(--sixthColor); 
+    text-align: justify;
+    border-radius: 20px;
+    z-index: 5;
+    box-shadow: 1px 1px 15px 1px var(--sixthColor);
+}
+
+h3{
+    padding: 20px;
+    text-align: center;
+}
+
+i{
+    padding: 5px 15px 5px 10px;
+    background-color: var(--sixthColor); 
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px var(--sixthColor);
+}
+
