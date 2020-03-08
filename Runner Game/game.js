@@ -9,8 +9,12 @@ const instruction = document.querySelector(".gameInstruction");
 const gameOverTxt = document.querySelector(".gameOverTxt");
 const imgBanana = document.getElementById("banana");
 const imgStone = document.getElementById("stone");
-const imgRunner = document.getElementById("runner"); 
+const imgRunner0 = document.getElementById("runner0"); 
+const imgRunner1 = document.getElementById("runner1"); 
+const imgRunner2 = document.getElementById("runner2"); 
 const imgDrink = document.getElementById("drink"); 
+const imgLand1 = document.getElementById("land1");
+const imgLand2 = document.getElementById("land2");
 let gameOver = false;
 
 //----------Configuration speed----------
@@ -81,19 +85,31 @@ function startGame() {
         speed = 0;
         score = 0;
         canJump = true;
-        img = imgRunner;
+        frameCheck = 0;
+        img = imgRunner0;
         constructor(x, y) {
             super(x, y);
         }
 
         move = () => {  
+            if (this.frameCheck > 15 && this.canJump == false) { 
+                this.img = imgRunner1; 
+                if (this.frameCheck > 30) {
+                    this.frameCheck = 0;
+                    this.img = imgRunner0;
+                }
+            }
             if (controller.up && this.canJump == false) {
                 this.speed -= 50;
                 this.canJump = true;
+                this.img = imgRunner2;
             }   
             this.speed += 1.5; // gravity
             this.y += this.speed;
             this.speed *= 0.9; // friction
+            if(this.canJump == false){
+                this.frameCheck++;
+            }
             if (this.y > 320) {
                 this.canJump = false;
                 this.y = 320;
