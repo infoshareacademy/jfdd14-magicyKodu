@@ -21,6 +21,13 @@ const drink = new Audio('sound-mp3/drink.mp3');
 const background = new Audio('sound-mp3/background.mp3');
 let gameOver = false;
 
+if (localStorage.getItem("savedScore") === null){
+    localStorage.savedScore = JSON.stringify(0);
+} else {
+    resultMax.innerHTML = JSON.parse(localStorage.savedScore);
+}
+
+ 
 //----------Configuration speed----------
 let generalSpeed = 9;
 let bananaRandomMin = 10;
@@ -32,7 +39,7 @@ let drinkRandomMax = 50;
 
 //----------Speed change----------
 const generalSpeedRatio = 0.003; // speed up ratio
-const ratio = 0.00167 // frequency increment
+const ratio = 0.00167; // frequency increment
 
 function startGame() {
 
@@ -154,8 +161,8 @@ function startGame() {
             }   
             this.speed += 1.5; // gravity
             this.y += this.speed;
-            this.speed *= 0.9; // friction
-            if(this.canJump == false){
+            this.speed *= 0.9; //friction
+            if (this.canJump == false){
                 this.frameCheck++;
             }
             if (this.y > 310) {
@@ -297,7 +304,7 @@ function startGame() {
         if (gameOver == false) {
             window.requestAnimationFrame(setUp);
         }            
-}
+    }
 
 window.addEventListener("keydown", controller.keyListener);
 window.addEventListener("keyup", controller.keyListener);
