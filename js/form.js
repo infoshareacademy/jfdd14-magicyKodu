@@ -6,7 +6,7 @@ function validateEmail(email) {
     return reg.test(String(email).toLowerCase());
 }
 
-function showGamekAfterEmail(event) {  
+function showGameAfterEmail(event) {  
     event.preventDefault();
     let inputValue = input.value;
     let checkEmail = validateEmail(inputValue);
@@ -18,4 +18,4 @@ function showGamekAfterEmail(event) {
     } 
 }
 
-button.addEventListener("click", showGamekAfterEmail);
+button.addEventListener("click", showGameAfterEmail);
