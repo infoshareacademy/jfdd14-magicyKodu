@@ -25,8 +25,7 @@
     text-align: center;
     color: white;
     padding: 20px;
-   
-
+    z-index: 100;
 }
 
 .cookie-text {
@@ -41,7 +40,7 @@ div > button{
     border-radius: 5px;
     border: 2px solid white;
     line-height: 3px;
-    
+    cursor: pointer;
 }
 
 @media (min-width: 576px){
