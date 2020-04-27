@@ -16,9 +16,9 @@ Table of content
 Technology stack
 ============
 
-- [HTML5]
-- [CSS3]
-- [JavaScript]
+- HTML5
+- CSS3
+- JavaScript
 
 Landing page
 ============
@@ -41,11 +41,11 @@ Game
 Mini [game](http://www.magicykodu.jfdd14.is-academy.pl/Runner%20Game/game.html) for application subscribers.
 
 Game instruction:
-You play the role of a professional runner who takes part in long-distance competitions.
+- You play the role of a professional runner who takes part in long-distance competitions
 - Collect bananas encountered for 1 point, which provide energy for further operation
 - Grab a magic drink for 3 points that hydrates your body
 - Watch out for appearing stones that you have to jump over. Otherwise, you will twist the ankle and the game is over
-You make the jump by pressing the up arrow on the keyboard.
+- You make the jump by pressing the up arrow on the keyboard
 
 [![Plunner4Runner game](https://i.postimg.cc/jq7Vt9Zm/Screenshot-from-2020-04-27-13-58-55.png)](http://www.magicykodu.jfdd14.is-academy.pl/Runner%20Game/game.html)
 
