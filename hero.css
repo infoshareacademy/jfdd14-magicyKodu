@@ -1,0 +1,139 @@
+/* General styles */
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
+/* Hero styles */
+.hero{ 
+    background: no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero1{
+    background-image: url(img/hero_1.jpg);
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero2{
+    background-image: url(img/hero_2.png);
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero3{
+    background-image: url(img/hero_3.jpg);
+    transition: background-image 0.5s ease-in-out;
+    
+}
+
+.selected{
+    color: red;
+}
+
+.hero__header{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;   
+    padding: 20px;  
+}
+
+h2{
+    font-family: var(--primaryFont);
+    line-height: 46px;
+    font-size: 38px;
+    padding-top: 70px;
+}
+
+h3{
+    font-family: var(--secondaryFont);
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.hero__header__btn{
+    margin-top: 30px;
+}
+
+.btn{
+    background-color: var(--primaryColor);
+    padding: 0.8em;
+    border-radius: 5px;
+    font-family: var(--secondaryFont);
+    font-weight: bold;
+}
+
+
+.btn:hover{
+    background-image: radial-gradient(var(--secondaryColor), var(--primaryColor));
+    color: var(--thirdColor);
+}
+
+/* Extra small devices (landscape phones, less than 576px) */
+@media (max-width: 575px) { 
+   
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    .hero__header{
+        padding: 50px;
+        justify-content: center;
+    }
+
+    .hero__header__btn{
+        margin-top: 30px;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .hero__header{
+        text-align: left;
+        padding: 30px;
+    }
+
+    h2{
+        line-height: 46px;
+        font-size: 56px;
+    }
+    
+    h3{
+        line-height: 38px;
+        font-size: 24px;
+    }
+
+    .btn{
+        font-size: 1.2em;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+    h2{
+        line-height: 46px;
+        font-size: 72px;
+    }
+    
+    h3{
+        line-height: 44px;
+        font-size: 28px;
+    }
+
+}
+
+
+

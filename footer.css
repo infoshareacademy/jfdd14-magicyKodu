@@ -1,0 +1,19 @@
+footer{
+    background-color: var(--forthColor);
+    color: var(--thirdColor);
+    font-family: var(--secondaryFont);
+    margin: 0;
+    padding: 5px 0;
+}
+
+.siteFooter{
+    margin: 0;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+#containerFooter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

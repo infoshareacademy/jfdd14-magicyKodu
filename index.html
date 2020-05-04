@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner 4 runner</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="stylesheet" href="aboutUs.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+    <header class="headerNav">  
+        <div class="logo">
+            <a href="#home"><img src="img/logo.svg" alt="planner_4_runner_logo_small" class="imgNav" id="imgSmall"><img src="img/logo_big.svg" alt="planner_4_runner_logo_big" id="imgBig"></a>
+        </div>
+        <nav>
+            <a class="showMenu"><img src="img/menu.svg" alt="menu_btn" class="imgNav"></a>
+            <ul>
+                <li><a href="#home">Strona główna</a></li>
+                <li><a href="#why_us">Dlaczego my</a></li>
+                <li><a href="#specification1">Specyfikacja</a></li>
+                <li><a href="#premiere1">Premiera</a></li>
+                <li><a href="#team">Zespół</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>                      
+    </header>
+
+    <main>
+        <section class="hero hero1" id="home">
+            <header class="hero__header"> 
+                <div class="hero__header__titles">
+                    <h2>Zaplanuj, pobiegnij!</h2>
+                    <h3>Planner 4 Runner to indywidualny kalendarz, który<br>  ułatwia organizację Twoich wydarzeń biegowych.<br> Wszystko co niezbędne zawarte w jednym miejscu.<h3>
+                </div>
+                <div class="hero__header__btn">
+                    <a href="#premiere1" class="btn">Zapisz się na premierę</a> 
+                </div>
+            </header> 
+            <button class="hero__btnArray" id="hero__btnPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="hero__btnArray" id="hero__btnNext"><i class="fas fa-chevron-right"></i></button> 
+            <a href="#" class="hero__circle" id="hero__circle1"><i class="fas fa-circle"></i></a> 
+            <a href="#" class="hero__circle" id="hero__circle2"><i class="fas fa-circle"></i></a> 
+            <a href="#" class="hero__circle" id="hero__circle3"><i class="fas fa-circle"></i></a> 
+        </section>
+
+        <section id="why_us">
+
+            <h2 class="sectionHeader">Dlaczego my?</h2>
+
+            <div class="containerFunctions" > 
+                    <div class="functions">
+                        <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy"> 
+                        <h3 class="functionsInfo">Podgląd wydarzeń <br> w okolicy</h3>  
+                    </div>
+                        
+                    <div class="functions">
+                        <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
+                        <h3 class="functionsInfo">Dodawanie własnych wydarzeń</h3>
+                    </div>
+
+                    <div class="functions">
+                        <img src="image/history-solid.svg" alt="Historia startów">
+                        <h3 class="functionsInfo">Historia Twoich startów</h3>
+                    </div>
+
+                    <div class="functions">
+                        <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
+                        <h3 class="functionsInfo">Automatyczne <br> uaktualnianie kalendarza</h3>
+                    </div>
+               </div>
+        </section>
+
+        <section id="specification1">
+            <div class="containerSpec">
+                <h2 class="headliner">SPECYFIKACJA</h2>
+                <ul id="specification">
+                    <li>
+                        <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy">   
+                        <h4 class="event">Podgląd wydarzeń w okolicy</h4>
+                        <p class="inscription">Znajdź grupy i wydarzenia w pobliżu, dzięki którym poznasz nowych ludzi i odkryjesz nowe hobby. Korzystaj z Planner4Runner, aby lepiej poznać ścieżki</p>
+                    </li>
+                    <li >
+                        <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
+                        <h4 class="event">Dodawanie własnych wydarzeń</h4>
+                        <p class="inscription">Sam możesz zorganizować swój własny bieg, wystarczy jedynie utworzyć własne wydarzenie i gotowe. Użytkownicy sami zapisują się na bieg. A Ty jesteś organizatorem</p>
+                    </li>
+                    <li>
+                        <img src="image/history-solid.svg" alt="Historia startów">
+                        <h4 class="event">Historia startów</h4>
+                        <p class="inscription">Jesteś w stanie sprawdzać swoje biegi, dzięki temu możesz porównywać swoje starty, poprawiać wyniki oraz porównywać z innymi użytkownikami</p>
+                    </li>
+                    <li>
+                        <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
+                        <h4 class="event">Automatyczne aktualizacje kalendarza</h4>
+                        <p class="inscription">Twoje wydarzenia automatycznie będą dopisane do kalenarza, dzięki czemu nie zapomnisz o zbliżających się biegowych wydarzeniach</p>
+                    </li>
+                    <li>
+                        <img src="image/map-signs-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h4 class="event">Dodaj własne trasy biegowe</h4>
+                        <p class="inscription">Masz swóją ulubioną trasę, podziel się z innymi i razem biegajcie. Pochwal się swoimi najlepszymi ścieżkami, ciesz się z innymi użytkownikami </p>
+                    </li>
+                    <li>
+                        <img src="image/user-shield-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h4 class="event">Dbamy o bezpieczenstwo danych</h4>
+                        <p class="inscription">Spędzamy coraz więcej czasu w sieci. Nowe technologie zaczynają coraz bardziej dominować w naszym życiu, nasi pracownicy dbają o bezpieczeństwo</p>
+                    </li>
+                    <li>
+                        <img src="image/bell-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h4 class="event">Alert o wydarzeniach w Twojej okolicy</h4>
+                        <p class="inscription">Otrzymuj powiadomienia o wydarzeniach sportowych z Twojej okolicy, newslatter jest darmowy, oczywiście nie otrzymasz ani spamu ani reklam</p>
+                    </li>
+                    <li>
+                        <img src="image/eye-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
+                        <h4 class="event">Łatwe przejrzyste menu</h4>
+                        <p class="inscription">Menu to jesten z najważniejszych elementów, jeżeli chodzi o aplikację oraz stronę WWW, nasi klienci w łatwy i prosty sposób są w stanie znależć to czego szukają</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+         
+        <section id="premiere1">
+            <div class="containerPremiere">
+                <div id="premiere">
+                    <p>Zapisz się na naszą premierę</p>
+                    <input class="text" type="email" name="email" id="email" placeholder="podaj swój adres e-mail" required><br><br>
+                    <input class="text" type="submit" value="Wyślij formularz" required><br><br>
+                </div>    
+                <div class="check">
+                    <input class="check" type="checkbox" name="zgoda" value="zgoda" required > Wyrażam zgodę na otrzymanie jednego e-maila z informacją o premierze <br>
+                    <input class="check" type="checkbox" name="zgoda" value="zgoda" required> W związku z rozpoczęciem obowiązywania nowej regulacji w zakresie ochrony danych osobowych – Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r.
+                </div>
+            </div>    
+        </section>
+   
+        <section>
+       
+        <section id="team">
+            
+            <h2 class="sectionHeader">Zespół</h2>
+
+            <div class="containerAbout">
+
+                <div class="aboutUs">
+                    <img src="image/karolina.jpeg" alt="Karolina Szlenk"> 
+                    <h3>Karolina Szlenk</h3> 
+                    <p class="info">Absolwentka Politechniki Gdańskiej, pasjonatka technologii webowych. Fanka sportów siłowych i masła orzechowego.</p> 
+                    
+                    <div class="buttonGroup">
+                        <a href="https://www.linkedin.com/in/karolina-szlenk" target="_blank">
+                            <img class="button" src="./image/linkedin.svg" alt="linkedin karolina">
+                        </a>
+                        <a href="karolina_szlenk/index.html" target=blank>
+                            <img class="button" src="./image/female.png" alt="Homepage Karolina">
+                        </a>
+                        <a href="https://github.com/karolina-szlenk" target=blank>
+                            <img class="button" src="./image/github.png" alt="Github Karolina">
+                        </a>
+                        
+                    </div>
+                </div>
+                    
+                <div class="aboutUs">
+                    <img src="./image/kamil.jpg" alt="Kamil Czarnocki">
+                    <h3>Kamil Czarnocki</h3>
+                    <p class="info">Informatyk samouk. Miłośnik zwierząt, kolarstwa, muzyki elektronicznej oraz nowych technologii.</p> 
+
+                        <div class="buttonGroup">
+                            <a href="https://www.linkedin.com/in/kamil-czarnocki" target="_blank">
+                                <img class="button" src="./image/linkedin.svg" alt="linkedin kamil">
+                            </a>
+                            <a href="kamil_czarnocki/index.html" target=blank>
+                                <img class="button" src="./image/male.png" alt="Homepage Kamil">
+                            </a>
+                            <a href="https://github.com/kamil-czr" target=blank>
+                                <img class="button" src="./image/github.png" alt="Github Kamil">
+                            </a>
+                            
+                        </div>
+                </div>
+
+                <div class="aboutUs">
+                    <img src="image/dawid2.jpg" alt="Dawid Domański">
+                    <h3>Dawid Domański</h3>
+                    <p class="info">Finansista z zawodu. Entuzjasta piłki nożnej, trenujący nieokrzesanych 6-latków.</p> 
+                    
+                    <div class="buttonGroup">
+                        <a href="https://www.linkedin.com/in/dawid-domański-6235b4132" target="_blank">
+                            <img class="button" src="./image/linkedin.svg" alt="linkedin dawid">
+                        </a>
+                        <a href="dawid_domanski/index.html" target=blank>
+                            <img class="button" src="./image/male.png" alt="Homepage Dawid">
+                        </a>
+                        <a href="https://github.com/Davioli91" target=blank>
+                            <img class="button" src="./image/github.png" alt="Github dawid">
+                        </a>
+                        
+                    </div>
+              </div>
+            </div>
+          
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div id="containerFooter">
+            <p class="siteFooter">Copyright © 2020  |  Planner 4 runner  |  Wszelkie prawa zastrzeżone.</p>
+            <p class="siteFooter">Email: planner4runner@gmail.com</p>
+        </div>
+    </footer>  
+    
+<!-- SCRIPT JS -->
+<script src="carousel.js"></script>
+
+</body>
+
+</html>

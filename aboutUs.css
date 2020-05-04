@@ -1,0 +1,124 @@
+
+.containerAbout {
+    max-width: 1200px;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+}
+    
+.aboutUs {
+    
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 0px;
+    border-bottom: 10px solid #e0e0e0;
+}
+
+
+p.info {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    min-height: 100px;
+
+}
+
+.aboutUs img{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    border:3px solid white;
+    border-radius: 75px;
+    box-shadow:10px 10px 10px grey;  
+}
+
+.aboutUs .button {
+    border: 3px solid white;
+    width: 75px;
+    height: 75px;
+    transition: transform .2s;
+
+}
+
+.button:hover {
+    transform: translate(-5px, -10px); 
+}
+
+.buttonGroup{
+    flex-direction: row;
+    
+}
+
+.buttonGroup img{
+    margin-right: 15px;
+}
+
+span.aboutUsInfo {
+    font-weight: bold ;
+}
+
+
+    @media (min-width: 576px){
+        .containerAbout{
+            flex-flow: row;
+            margin: 0 auto; 
+        }
+    
+        .aboutUs {
+            width: 33.3%;
+            border-bottom: none; 
+            margin-bottom: 60px;
+        }
+
+        .AboutUs img{
+            width: 80px;
+            height: 80px;
+        }
+
+        p.info {
+            font-size: 15px;
+            margin: 20px auto;
+            min-height: 167px;
+        }
+    }
+    
+    @media (min-width: 768px){
+    
+        .functions img{
+            width: 90px;
+            height: 90px;
+        }
+        
+        p.info {
+            font-size: 15px;
+            margin: 20px auto;
+            min-height: 110px;
+        }
+    }
+    
+    @media (min-width: 992px){
+    
+        .functions img{
+            width: 120px;
+            height: 120px;
+        }
+    
+    
+    }
+
+
+   
+
+   
+   
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+*/
