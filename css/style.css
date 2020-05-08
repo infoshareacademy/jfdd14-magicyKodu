@@ -1,0 +1,62 @@
+/* General styles */
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color:#e0e0e0;
+    
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+    
+}
+
+.sectionHeader {
+    text-align: center;
+    background: white;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 80px 40px 40px ;
+}
+
+/* Extra small devices (landscape phones, less than 576px) */
+@media (max-width: 575px) { 
+   
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .sectionHeader {
+     font-size: 50px;
+}
+}

@@ -1,0 +1,177 @@
+/* General styles */
+:root{
+    --primaryColor: paintDots(num);
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+
+/* Hero styles */
+.hero{ 
+    background: no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero1{
+    background-image: url("../img/hero_1.jpg");
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero2{
+    background-image: url("../img/hero_2.jpg");
+    transition: background-image 0.5s ease-in-out;
+}
+
+.hero3{
+    background-image: url("../img/hero_3.jpg");
+    transition: background-image 0.5s ease-in-out;  
+}
+
+.hero__arrow{
+    display: none;   
+}
+
+i{
+    padding: 10px;
+}
+
+.active{
+    color: var(--primaryColor);
+}
+
+.hero__dot{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+
+.hero__header{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;   
+    padding: 20px;  
+}
+
+h2{
+    font-family: var(--primaryFont);
+    line-height: 46px;
+    font-size: 38px;
+    padding-top: 70px;
+}
+
+h3{
+    font-family: var(--secondaryFont);
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.hero__header__btn{
+    margin-top: 30px;
+}
+
+.btn{
+    background-color: var(--primaryColor);
+    padding: 0.8em;
+    border-radius: 5px;
+    font-family: var(--secondaryFont);
+    font-weight: bold;
+}
+
+
+.btn:hover{
+    background-image: radial-gradient(var(--secondaryColor), var(--primaryColor));
+    color: var(--thirdColor);
+}
+
+/* Extra small devices (landscape phones, less than 576px) */
+@media (max-width: 575px) { 
+   
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    .hero__header{
+        padding: 50px;
+        justify-content: center;
+    }
+
+    .hero__header__btn{
+        margin-top: 30px;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .hero__header{
+        text-align: left;
+        padding: 70px;
+    }
+
+    h2{
+        line-height: 46px;
+        font-size: 56px;
+    }
+    
+    h3{
+        line-height: 38px;
+        font-size: 24px;
+    }
+
+    .btn{
+        font-size: 1.2em;
+    }
+
+    .hero__arrow{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        font-size: 40px;
+        padding: 10px; 
+        cursor: pointer; 
+    }
+
+    .hero__dot{
+        top: 95%;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    .hero__header{
+        padding: 40px;
+        margin-left: 60px;
+    }
+
+    h2{
+        line-height: 46px;
+        font-size: 72px;
+    }
+    
+    h3{
+        line-height: 44px;
+        font-size: 28px;
+    }
+
+    .hero__arrow{
+        padding: 20px;  
+    }
+
+}
+
+
+

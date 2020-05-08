@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planner 4 runner</title>
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="hero.css">
-    <link rel="stylesheet" href="aboutUs.css">
-    <link rel="stylesheet" href="functions.css">
-    <link rel="stylesheet" href="aboutUs.css">
-    <link rel="stylesheet" href="functions.css">
-    <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Planner 4 runner</title>  
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/aboutUs.css">
+    <link rel="stylesheet" href="css/functions.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookies.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap&subset=latin-ext" rel="stylesheet">  
 </head>
 
 <body>
@@ -32,11 +31,23 @@
                 <li><a href="#team">Zespół</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
-        </nav>                      
+        </nav>
+        
     </header>
+
+    <div class="cookie-banner">
+        <p class="cookie-text">
+            Nasza strona internetowa używa plików cookies w celach statystycznych, reklamowych oraz funkcjonalnych. Dzięki nim możemy indywidualnie dostosować stronę do twoich potrzeb. Każdy może zaakceptować pliki cookies albo ma możliwość wyłączenia ich w przeglądarce, dzięki czemu nie będą zbierane żadne informacje.
+        </p>
+        <button class="cookieBtn">X</button>
+       
+    </div>
 
     <main>
         <section class="hero hero1" id="home">
+            <img src="img/hero_1.jpg" style="display:none;">
+            <img src="img/hero_2.jpg" style="display:none;">
+            <img src="img/hero_3.jpg" style="display:none;">
             <header class="hero__header"> 
                 <div class="hero__header__titles">
                     <h2>Zaplanuj, pobiegnij!</h2>
@@ -46,11 +57,15 @@
                     <a href="#premiere1" class="btn">Zapisz się na premierę</a> 
                 </div>
             </header> 
-            <button class="hero__btnArray" id="hero__btnPrev"><i class="fas fa-chevron-left"></i></button>
-            <button class="hero__btnArray" id="hero__btnNext"><i class="fas fa-chevron-right"></i></button> 
-            <a href="#" class="hero__circle" id="hero__circle1"><i class="fas fa-circle"></i></a> 
-            <a href="#" class="hero__circle" id="hero__circle2"><i class="fas fa-circle"></i></a> 
-            <a href="#" class="hero__circle" id="hero__circle3"><i class="fas fa-circle"></i></a> 
+            <div class="hero__arrow">
+                <a class="hero__arrow__single" id="hero__arrowPrev"><i class="fas fa-chevron-left"></i></button>
+                <a class="hero__arrow__single" id="hero__arrowNext"><i class="fas fa-chevron-right"></i></button> 
+            </div>
+            <div class="hero__dot">
+                <a href="#" class="hero__dot__single" id="hero__dot1" onclick="changeImg(1)"><i class="fas fa-circle"></i></a> 
+                <a href="#" class="hero__dot__single" id="hero__dot2" onclick="changeImg(2)"><i class="fas fa-circle"></i></a> 
+                <a href="#" class="hero__dot__single" id="hero__dot3" onclick="changeImg(3)"><i class="fas fa-circle"></i></a> 
+            </div>                 
         </section>
 
         <section id="why_us">
@@ -87,42 +102,42 @@
                     <li>
                         <img src="image/map-marked-alt-solid.svg" alt="Podgląd wydarzen w okolicy">   
                         <h4 class="event">Podgląd wydarzeń w okolicy</h4>
-                        <p class="inscription">Znajdź grupy i wydarzenia w pobliżu, dzięki którym poznasz nowych ludzi i odkryjesz nowe hobby. Korzystaj z Planner4Runner, aby lepiej poznać ścieżki</p>
+                        <p class="inscription">Znajdź grupy i wydarzenia w pobliżu, dzięki którym poznasz nowych ludzi i odkryjesz nowe hobby. Korzystaj z Planner4Runner, aby lepiej poznać ścieżki.</p>
                     </li>
                     <li >
                         <img src="image/plus-circle-solid.svg" alt="Dodawanie wlasnych wydarzen">
                         <h4 class="event">Dodawanie własnych wydarzeń</h4>
-                        <p class="inscription">Sam możesz zorganizować swój własny bieg, wystarczy jedynie utworzyć własne wydarzenie i gotowe. Użytkownicy sami zapisują się na bieg. A Ty jesteś organizatorem</p>
+                        <p class="inscription">Sam możesz zorganizować swój własny bieg, wystarczy jedynie utworzyć własne wydarzenie i gotowe. Użytkownicy sami zapisują się na bieg. A Ty jesteś organizatorem.</p>
                     </li>
                     <li>
                         <img src="image/history-solid.svg" alt="Historia startów">
-                        <h4 class="event">Historia startów</h4>
-                        <p class="inscription">Jesteś w stanie sprawdzać swoje biegi, dzięki temu możesz porównywać swoje starty, poprawiać wyniki oraz porównywać z innymi użytkownikami</p>
+                        <h4 class="event">Twoja historia startów</h4>
+                        <p class="inscription">Jesteś w stanie sprawdzać swoje biegi, dzięki temu możesz porównywać swoje starty, poprawiać wyniki oraz porównywać z innymi użytkownikami.</p>
                     </li>
                     <li>
                         <img src="image/calendar-plus-regular.svg" alt="Automatyczne uaktualniania kalendarza"> 
-                        <h4 class="event">Automatyczne aktualizacje kalendarza</h4>
-                        <p class="inscription">Twoje wydarzenia automatycznie będą dopisane do kalenarza, dzięki czemu nie zapomnisz o zbliżających się biegowych wydarzeniach</p>
+                        <h4 class="event">Automatyczne aktualizacje</h4>
+                        <p class="inscription">Twoje wydarzenia automatycznie będą dopisane do kalenarza, dzięki czemu nie zapomnisz o zbliżających się biegowych wydarzeniach.</p>
                     </li>
                     <li>
                         <img src="image/map-signs-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
                         <h4 class="event">Dodaj własne trasy biegowe</h4>
-                        <p class="inscription">Masz swóją ulubioną trasę, podziel się z innymi i razem biegajcie. Pochwal się swoimi najlepszymi ścieżkami, ciesz się z innymi użytkownikami </p>
+                        <p class="inscription">Masz swóją ulubioną trasę, podziel się z innymi i razem biegajcie. Pochwal się swoimi najlepszymi ścieżkami, ciesz się z innymi użytkownikami.</p>
                     </li>
                     <li>
                         <img src="image/user-shield-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
-                        <h4 class="event">Dbamy o bezpieczenstwo danych</h4>
-                        <p class="inscription">Spędzamy coraz więcej czasu w sieci. Nowe technologie zaczynają coraz bardziej dominować w naszym życiu, nasi pracownicy dbają o bezpieczeństwo</p>
+                        <h4 class="event">Dbamy o bezpieczeństwo</h4>
+                        <p class="inscription">Spędzamy coraz więcej czasu w sieci. Nowe technologie zaczynają coraz bardziej dominować w naszym życiu, nasi pracownicy dbają o bezpieczeństwo.</p>
                     </li>
                     <li>
                         <img src="image/bell-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
                         <h4 class="event">Alert o wydarzeniach w Twojej okolicy</h4>
-                        <p class="inscription">Otrzymuj powiadomienia o wydarzeniach sportowych z Twojej okolicy, newslatter jest darmowy, oczywiście nie otrzymasz ani spamu ani reklam</p>
+                        <p class="inscription">Otrzymuj powiadomienia o wydarzeniach sportowych z Twojej okolicy, newsletter jest darmowy, oczywiście nie otrzymasz ani spamu ani reklam.</p>
                     </li>
                     <li>
                         <img src="image/eye-solid.svg" alt="Dodaj wlasne trasy biegowe"> 
                         <h4 class="event">Łatwe przejrzyste menu</h4>
-                        <p class="inscription">Menu to jesten z najważniejszych elementów, jeżeli chodzi o aplikację oraz stronę WWW, nasi klienci w łatwy i prosty sposób są w stanie znależć to czego szukają</p>
+                        <p class="inscription">Menu to jeden z najważniejszych elementów, jeżeli chodzi o aplikację oraz stronę WWW, nasi klienci w łatwy i prosty sposób są w stanie znależć to czego szukają.</p>
                     </li>
                 </ul>
             </div>
@@ -132,8 +147,11 @@
             <div class="containerPremiere">
                 <div id="premiere">
                     <p>Zapisz się na naszą premierę</p>
-                    <input class="text" type="email" name="email" id="email" placeholder="podaj swój adres e-mail" required><br><br>
-                    <input class="text" type="submit" value="Wyślij formularz" required><br><br>
+                    <form class="premiere__form">
+                        <input class="text" id="premiere__form__input" type="email" name="email" id="email" placeholder="Podaj swój adres e-mail" required><br><br>
+                        <input class="text" id="premiere__form__btn" type="submit" value="Wyślij" required><br><br>
+                    </form>
+                    <a href="game.html" class="hiddenLink"></a>
                 </div>    
                 <div class="check">
                     <input class="check" type="checkbox" name="zgoda" value="zgoda" required > Wyrażam zgodę na otrzymanie jednego e-maila z informacją o premierze <br>
@@ -141,9 +159,7 @@
                 </div>
             </div>    
         </section>
-   
-        <section>
-       
+        
         <section id="team">
             
             <h2 class="sectionHeader">Zespół</h2>
@@ -217,9 +233,13 @@
             <p class="siteFooter">Email: planner4runner@gmail.com</p>
         </div>
     </footer>  
-    
-<!-- SCRIPT JS -->
-<script src="carousel.js"></script>
+
+    <!-- SCRIPT JS -->
+
+    <script src="js/cookies.js"></script> 
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/form.js"></script>
 
 </body>
 

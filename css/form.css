@@ -1,0 +1,175 @@
+:root{
+    --primaryColor: #28bb76;
+    --secondaryColor: #427c5b;
+    --thirdColor: #fff;
+    --forthColor: #1a1a1a;
+    --primaryFont: 'Bebas Neue', cursive;
+    --secondaryFont: 'Montserrat', sans-serif;
+}
+div.check{
+    margin: 10px auto;
+    padding: 20px 10px;
+    max-width: 400px;
+    text-align: left;
+  
+}
+.headliner{
+    text-align: center;
+    font-family: var(--primaryFont);
+    max-width: 1200px;
+    background-color: white;
+    margin: 0px auto;
+}
+.check{
+    text-align: left;
+    cursor: pointer;
+}
+.event{
+    width: 160px;
+    height: 60px;  
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0px;
+}
+.text{
+    cursor: pointer;
+}
+
+.inscription{
+    width: 150px;
+    height: 220px;
+    text-align: left;
+    margin: 5px 0px;
+}
+
+#specification {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 70px 5px 20px;
+    max-width: 1200px;
+    margin: 0px auto;
+    background-color: white;
+   
+}
+
+#specification li{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    height: 380px;
+}
+#specification li img{
+    width: 50px;
+    height: 50px;
+}
+
+ #premiere p{
+    text-align: center;
+    font-size: 36px;
+    padding-top: 70px;
+    margin-top: 0px;
+ }
+ div#premiere{
+    min-width: 200px;
+    height: 300px;
+    text-align: center;
+    
+     
+ }
+ .containerPremiere{
+    background-color: var(--forthColor);
+    color: var(--thirdColor);
+    font-family: var(--secondaryFont);
+    min-height: auto;
+    max-width: 100%;
+    margin: 0px auto;
+
+ }
+ .containerSpec{
+    font-family: var(--secondaryFont);
+    font-size: 16px;
+ }
+ div#premiere form input.text{
+    margin: auto 0;
+    width: 30%;
+    min-width: 200px;
+    max-width: 400px;
+    height: 45px;
+    text-align: center;
+    color: white;
+    background-color: var(--primaryColor);
+    padding: 0.8em;
+    border-radius: 5px;
+    font-family: var(--secondaryFont);
+    font-weight: bold;
+
+}
+div#premiere form input.text:hover{
+    background-color: #427c5b;
+}
+div#premiere form input#premiere__form__input{
+    width: 30%;
+    min-width: 200px;
+    max-width: 400px;
+    height: 45px;
+    background-color:white;
+    color: black;
+    justify-content: center;
+    
+}
+form{
+    padding: 0px;
+    margin: 20px auto;
+
+}
+.active{
+    color:  #28bb76;
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px){
+        .inscription{
+        width: 300px;
+        height: 120px;
+        text-align: left;
+    }
+    #specification li{
+        height: 300px;
+    }
+    .event{
+        width: 300px;
+        height: 70px; 
+        font-size: 24px;
+    }
+    div.check{
+        margin: 0 auto;
+        padding: 0 10px 10px;
+        width: 500px;
+    }
+}
+@media (min-width: 992px){
+    .inscription{
+    width: 400px;
+    height: 100px;
+    text-align: left;
+    font-size: 18px;
+}
+#specification li{
+    height: 300px;
+}
+.event{
+    width: 300px;
+    height: 70px; 
+    font-size: 26px;
+}
+}
